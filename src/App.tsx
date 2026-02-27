@@ -38,6 +38,7 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
         </WikiLayout>
+        <IsabellaChat />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

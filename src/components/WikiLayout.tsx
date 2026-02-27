@@ -22,6 +22,9 @@ export function WikiLayout({ children }: WikiLayoutProps) {
               <span className="text-primary font-bold text-lg tracking-tight">TAMV</span>
               <span className="text-muted-foreground text-sm">MD‑X4™ Wiki</span>
             </div>
+            <div className="ml-auto">
+              <WikiSearch />
+            </div>
           </header>
           <main className="flex-1 overflow-y-auto">
             {children}
