@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { WikiSidebar } from "./WikiSidebar";
+import { WikiSearch } from "./WikiSearch";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { Menu } from "lucide-react";
 
