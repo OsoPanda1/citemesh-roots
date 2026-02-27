@@ -1,6 +1,6 @@
 import { WikiPage } from "@/components/WikiPage";
 import { Section, InfoCard } from "@/components/WikiElements";
-import { Shield, Users, FileCheck, RefreshCw, BookOpen, Scale, Eye, GitBranch } from "lucide-react";
+import { Shield, Users, FileCheck, RefreshCw, BookOpen, Scale, Eye, GitBranch, Globe } from "lucide-react";
 
 const Gobernanza = () => (
   <WikiPage

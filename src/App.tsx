@@ -34,6 +34,7 @@ const App = () => (
             <Route path="/ia-agentes" element={<IAAgentes />} />
             <Route path="/timeline" element={<Timeline />} />
             <Route path="/documentacion" element={<Documentacion />} />
+            <Route path="/gobernanza" element={<Gobernanza />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </WikiLayout>
