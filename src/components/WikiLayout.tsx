@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { WikiSidebar } from "./WikiSidebar";
+import { WikiSearch } from "./WikiSearch";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { Menu } from "lucide-react";
 
@@ -20,6 +21,9 @@ export function WikiLayout({ children }: WikiLayoutProps) {
             <div className="flex items-center gap-2">
               <span className="text-primary font-bold text-lg tracking-tight">TAMV</span>
               <span className="text-muted-foreground text-sm">MD‑X4™ Wiki</span>
+            </div>
+            <div className="ml-auto">
+              <WikiSearch />
             </div>
           </header>
           <main className="flex-1 overflow-y-auto">

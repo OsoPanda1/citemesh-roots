@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { WikiLayout } from "@/components/WikiLayout";
+import { IsabellaChat } from "@/components/IsabellaChat";
 import Index from "./pages/Index";
 import Introduccion from "./pages/Introduccion";
 import Filosofia from "./pages/Filosofia";
@@ -12,6 +13,7 @@ import DomainPage from "./pages/DomainPage";
 import IAAgentes from "./pages/IAAgentes";
 import Timeline from "./pages/Timeline";
 import Documentacion from "./pages/Documentacion";
+import Gobernanza from "./pages/Gobernanza";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,9 +34,11 @@ const App = () => (
             <Route path="/ia-agentes" element={<IAAgentes />} />
             <Route path="/timeline" element={<Timeline />} />
             <Route path="/documentacion" element={<Documentacion />} />
+            <Route path="/gobernanza" element={<Gobernanza />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </WikiLayout>
+        <IsabellaChat />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

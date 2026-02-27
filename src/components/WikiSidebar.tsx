@@ -40,6 +40,7 @@ const extras = [
   { title: "IA & Agentes", url: "/ia-agentes", icon: Brain },
   { title: "Línea de Tiempo", url: "/timeline", icon: Clock },
   { title: "Documentación", url: "/documentacion", icon: FileText },
+  { title: "Gobernanza", url: "/gobernanza", icon: Shield },
 ];
 
 export function WikiSidebar() {
