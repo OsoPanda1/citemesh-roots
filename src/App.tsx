@@ -38,6 +38,9 @@ const App = () => (
             <Route path="/timeline" element={<Timeline />} />
             <Route path="/documentacion" element={<Documentacion />} />
             <Route path="/gobernanza" element={<Gobernanza />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/sistemas-avanzados" element={<SistemasAvanzados />} />
+            <Route path="/manuales" element={<Manuales />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </WikiLayout>

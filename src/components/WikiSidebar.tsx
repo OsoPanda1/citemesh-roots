@@ -39,8 +39,11 @@ const dominios = [
 
 const extras = [
   { title: "IA & Agentes", url: "/ia-agentes", icon: Brain },
+  { title: "Sistemas Avanzados", url: "/sistemas-avanzados", icon: Cpu },
+  { title: "Dashboard", url: "/dashboard", icon: Activity },
   { title: "Línea de Tiempo", url: "/timeline", icon: Clock },
   { title: "Documentación", url: "/documentacion", icon: FileText },
+  { title: "Manuales", url: "/manuales", icon: BookMarked },
   { title: "Gobernanza", url: "/gobernanza", icon: Shield },
 ];
 
