@@ -1,73 +1,97 @@
-# Welcome to your Lovable project
+# Núcleo Operativo Autopoiético TAMV
 
-## Project info
+> *"Demostrar que un autodidacta puede construir un sistema civilizatorio global. Reescribir el legado para que sus descendientes hereden una imagen de triunfo y soberanía."*
+> — **Anubis Villaseñor**
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## 🌐 TAMV MD-X4: Ecosistema Civilizatorio Federado
 
-## How can I edit this code?
+TAMV (**T**ecnología **A**vanzada **M**exicana **V**ersátil) es el primer ecosistema civilizatorio federado antifrágil, diseñado desde la periferia de Real del Monte, Hidalgo, México, para reconfigurar el centro tecnológico global.
 
-There are several ways of editing your application.
+### 🎯 Dimensión 4D
 
-**Use Lovable**
+- **Identidad Soberana**: Control verificable sobre memoria e historia digital
+- **Infraestructura Federada**: Nodos autónomos interconectados
+- **Inteligencia Asistencial Auditada**: Isabella Villaseñor IA™
+- **Economía Ética Antifrágil**: Diseñada para fortalecerse ante tensiones
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## 🏛️ Arquitectura
 
-Changes made via Lovable will be committed automatically to this repo.
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    NOA-TAMV: Núcleo Operativo              │
+│                   Autopoiético y Federado                   │
+├─────────────────────────────────────────────────────────────┤
+│  Capa Meta-Sistémica    │  Isabella AI, Jupyter, Evolution  │
+│  Capa de Control        │  OPA, EOCT-Ledger, Certificación  │
+│  Capa de Coordinación   │  Service Mesh, CRDT Sync          │
+│  Capa Operacional       │  Dominios TAMV (8+)              │
+└─────────────────────────────────────────────────────────────┘
+```
 
-**Use your preferred IDE**
+### Documentación
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- 📖 [Arquitectura Técnica Completa](docs/architecture/TAMV-Core-Architecture.md)
+- 🔗 [Manual de Conexión Wiki-Arquitectura](docs/architecture/TAMV-Wiki-Integration-Manual.md)
+- 🏗️ [Ontología Prisma](prisma/schema.prisma)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🚀 Inicio Rápido
 
-Follow these steps:
+```bash
+# Clonar el repositorio
+git clone https://github.com/OsoPanda1/citemesh-roots.git
+cd citemesh-roots
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Instalar dependencias
+npm install
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Configurar variables de entorno
+cp .env.example .env
+# Editar .env con tus credenciales
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Iniciar base de datos
+npx prisma migrate dev
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Iniciar servidor de desarrollo
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## 🛠️ Stack Tecnológico
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+| Categoría | Tecnología |
+|-----------|------------|
+| Frontend | React 18, TypeScript, Vite, Tailwind CSS, shadcn/ui |
+| Backend | Supabase, Prisma ORM |
+| Infraestructura | Terraform, Kubernetes |
+| Observabilidad | Grafana, Prometheus, Tempo, Loki |
+| Inteligencia | Isabella AI (Agente personalizado) |
 
-**Use GitHub Codespaces**
+## 📜 Principios del Códice
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+1. **Dignidad Humana > Rendimiento**: Identidad soberana sobre optimización
+2. **Transparencia > Opacidad**: Todo auditable y explicable
+3. **Soberanía > Dependencia**: Autonomía de datos y conocimiento
+4. **Autopoiesis Continua**: El sistema se reproduce y mejora a sí mismo
+5. **Resiliencia Civilizatoria**: Persistencia más allá de componentes individuales
 
-## What technologies are used for this project?
+## 👤 Fundador
 
-This project is built with:
+**Edwin Oswaldo Castillo Trejo** (Anubis Villaseñor)
+- Origen: Real del Monte, Hidalgo, México
+- Formación: Autodidacta con dominio equivalente a doctorado
+- Obra: "La Nueva Era Digital TAMV Online Network"
+- Legado: 21,600+ horas de trabajo individual documentadas
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🤝 Contribuir
 
-## How can I deploy this project?
+Ver [CONTRIBUTING.md](CONTRIBUTING.md) para guías de contribución.
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+## 📄 Licencia
 
-## Can I connect a custom domain to my Lovable project?
+Este proyecto está licenciado bajo los términos del Códice Maestro TAMV.
 
-Yes, you can!
+---
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+<p align="center">
+  <strong>TAMV MD-X4</strong> — Infraestructura Civilizatoria desde la Periferia<br/>
+  <em>"Reconfigurar el centro desde la periferia"</em>
+</p>
