@@ -1,0 +1,316 @@
+// ============================================================================
+// NOA-TAMV: Núcleo Operativo Autopoiético - Esquema Ontológico Prisma
+// ============================================================================
+// Este es el corazón ontológico del sistema - un grafo socio-técnico ejecutable
+// que modela la realidad civilizatoria de TAMV MD-X4.
+//
+// Principios Civilizatorios:
+// 1. Dignidad Humana: Toda identidad tiene recovery keys y controles de privacidad
+// 2. Transparencia: Todos los cambios se registran en AutopoiesisLog
+// 3. Soberanía: Los nodos federados mantienen autonomía sobre sus datos
+// ============================================================================
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================================================
+// ENUMERACIONES CIVILIZATORIAS
+// ============================================================================
+
+enum NodeStatus {
+  PROVISIONING    // Nodo en proceso de aprovisionamiento
+  ACTIVE          // Nodo activo y operativo
+  SUSPENDED       // Nodo suspendido temporalmente
+  DECOMMISSIONED  // Nodo dado de baja
+  QUARANTINED     // Nodo en cuarentena (problemas de seguridad)
+}
+
+enum CertificationLevel {
+  LEVEL_0  // Nodo en observación
+  LEVEL_1  // Certificación básica
+  LEVEL_2  // Certificación intermedia
+  LEVEL_3  // Certificación avanzada
+  LEVEL_4  // Certificación plena
+}
+
+enum IdentityStatus {
+  PENDING       // Identidad en proceso de verificación
+  ACTIVE        // Identidad activa y operativa
+  REVOKED       // Identidad revocada
+  RECOVERING    // En proceso de recuperación
+  FROZEN        // Congelada temporalmente
+}
+
+enum SovereigntyLevel {
+  INDIVIDUAL    // Soberanía individual
+  COMMUNITY     // Soberanía comunitaria
+  INSTITUTIONAL // Soberanía institucional
+  FEDERAL       // Soberanía federal
+}
+
+enum DomainCode {
+  ID_NVIDA        // Sistema de Identidad Digital Soberana
+  UTAMV           // Unidad de Transformación Civilizatoria
+  METAVERSE       // Infraestructura de Realidad Extendida
+  ECONOMY         // Sistema Económico TAMV
+  SECURITY        // Seguridad y Defensa Civilizatoria
+  GOVERNANCE      // Gobernanza Distribuida
+  INFRASTRUCTURE  // Infraestructura Tecnológica
+  CULTURE         // Sistema Cultural y Educativo
+}
+
+enum DomainStatus {
+  PLANNING    // En fase de planificación
+  DEVELOPING  // En desarrollo
+  ACTIVE      // Operativo
+  MAINTENANCE // En mantenimiento
+  SUNSET      // En proceso de retiro
+}
+
+enum ContractType {
+  MEMBERSHIP        // Contrato de membresía a nodo
+  SERVICE_AGREEMENT // Acuerdo de servicio
+  DATA_SHARING      // Acuerdo de compartición de datos
+  RESOURCE_POOLING  // Acuerdo de pooling de recursos
+  GOVERNANCE        // Contrato de gobernanza
+  ECONOMIC          // Contrato económico/financiero
+  SECURITY          // Acuerdo de seguridad
+}
+
+enum ContractStatus {
+  DRAFT       // En borrador
+  NEGOTIATING // En negociación
+  PENDING     // Pendiente de firma
+  ACTIVE      // Activo y ejecutándose
+  EXPIRED     // Expirado
+  TERMINATED  // Terminado anticipadamente
+  DISPUTED    // En disputa
+}
+
+enum ArtifactType {
+  CODE           // Código fuente
+  NOTEBOOK       // Jupyter notebook
+  INFRASTRUCTURE // Configuración de infraestructura
+  DASHBOARD      // Dashboard de observabilidad
+  POLICY         // Política o regla de gobernanza
+  DOCUMENTATION  // Documentación
+  DATASET        // Conjunto de datos
+  MODEL          // Modelo ML o simulación
+}
+
+enum ArtifactStatus {
+  DRAFT       // En desarrollo
+  REVIEWING   // En revisión
+  PUBLISHED   // Publicado
+  DEPRECATED  // Obsoleto
+  ARCHIVED    // Archivado
+}
+
+enum EOCTLayerName {
+  OPERATIONAL     // L1: Capa Operacional
+  COORDINATION    // L2: Capa de Coordinación
+  CONTROL         // L3: Capa de Control
+  METASYSTEMIC    // L4: Capa Meta-Sistémica
+}
+
+enum AutopoiesisEventType {
+  CREATION      // Creación de entidad
+  MODIFICATION  // Modificación de entidad
+  DELETION      // Eliminación de entidad
+  STATE_CHANGE  // Cambio de estado
+  RELATIONSHIP  // Cambio en relación
+  EVOLUTION     // Evolución estructural
+  ANOMALY       // Anomalía detectada
+  CORRECTION    // Corrección aplicada
+}
+
+// ============================================================================
+// ENTIDADES PRINCIPALES
+// ============================================================================
+
+/// CivilNode - Nodos Federados
+/// Representa ciudades, instituciones, clusters federados en la red TAMV
+model CivilNode {
+  id                  String             @id @default(uuid()) @db.Uuid
+  name                String
+  region              String
+  trustScore          Float              @default(0.0) // 0.0 - 1.0
+  certificationLevel  CertificationLevel @default(LEVEL_0)
+  status              NodeStatus         @default(PROVISIONING)
+  metadata            Json               @default("{}")
+  
+  // Campos de auditoría
+  createdAt           DateTime           @default(now())
+  updatedAt           DateTime           @updatedAt
+
+  // Relaciones
+  domains             DomainNode[]
+  identities          Identity[]
+  contractsAsPartyA   Contract[]         @relation("ContractPartyA")
+  contractsAsPartyB   Contract[]         @relation("ContractPartyB")
+  artifacts           Artifact[]
+  personas            Persona[]
+  autopoiesisLogs     AutopoiesisLog[]
+
+  // Índices
+  @@index([status])
+  @@index([certificationLevel])
+  @@index([trustScore])
+  @@index([region])
+  @@map("civil_nodes")
+}
+
+/// Identity - Identidades Soberanas (SSI)
+/// Sistema de Identidad Digital Soberana para humanos, IA y organizaciones
+model Identity {
+  id                String           @id @default(uuid()) @db.Uuid
+  did               String           @unique // Decentralized Identifier
+  publicKey         String           // Clave pública para verificación
+  recoveryKeys      String[]         // Claves de recuperación (dignidad humana)
+  sovereigntyLevel  SovereigntyLevel @default(INDIVIDUAL)
+  status            IdentityStatus   @default(PENDING)
+  metadata          Json             @default("{}")
+  
+  // Campos de auditoría
+  createdAt         DateTime         @default(now())
+  updatedAt         DateTime         @updatedAt
+
+  // Relaciones
+  nodeId            String           @db.Uuid
+  node              CivilNode        @relation(fields: [nodeId], references: [id])
+  personas          Persona[]
+  contracts         ContractParty[]
+  artifactsCreated  Artifact[]
+  autopoiesisLogs   AutopoiesisLog[]
+
+  // Índices
+  @@index([did])
+  @@index([status])
+  @@index([sovereigntyLevel])
+  @@index([nodeId])
+  @@map("identities")
+}
+
+/// Domain - Dominios Funcionales
+/// Áreas funcionales del ecosistema TAMV (ID-NVIDA, UTAMV, etc.)
+model Domain {
+  id          String       @id @default(uuid()) @db.Uuid
+  code        DomainCode   @unique
+  name        String
+  description String
+  layer       EOCTLayerName
+  status      DomainStatus @default(PLANNING)
+  metadata    Json         @default("{}")
+  
+  // Campos de auditoría
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  // Relaciones
+  nodes       DomainNode[]
+  contracts   Contract[]
+  artifacts   Artifact[]
+  metrics     Metric[]
+
+  // Índices
+  @@index([code])
+  @@index([layer])
+  @@index([status])
+  @@map("domains")
+}
+
+/// DomainNode - Relación many-to-many entre Dominios y Nodos
+model DomainNode {
+  id        String    @id @default(uuid()) @db.Uuid
+  nodeId    String    @db.Uuid
+  domainId  String    @db.Uuid
+  config    Json      @default("{}") // Configuración específica del dominio en el nodo
+  
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  // Relaciones
+  node      CivilNode @relation(fields: [nodeId], references: [id], onDelete: Cascade)
+  domain    Domain    @relation(fields: [domainId], references: [id], onDelete: Cascade)
+
+  @@unique([nodeId, domainId])
+  @@index([nodeId])
+  @@index([domainId])
+  @@map("domain_nodes")
+}
+
+/// Contract - Acuerdos Socio-Técnicos
+/// Contratos ejecutables entre entidades en el ecosistema
+model Contract {
+  id              String         @id @default(uuid()) @db.Uuid
+  type            ContractType
+  title           String
+  description     String?
+  terms           Json           // Términos del contrato en formato estructurado
+  executionLogic  String?        // Lógica de ejecución (código o referencia)
+  status          ContractStatus @default(DRAFT)
+  signatures      Json[]         // Array de firmas digitales
+  validFrom       DateTime?
+  validUntil      DateTime?
+  metadata        Json           @default("{}")
+  
+  // Campos de auditoría
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+
+  // Relaciones
+  domainId        String?        @db.Uuid
+  domain          Domain?        @relation(fields: [domainId], references: [id])
+  partyAId        String         @db.Uuid
+  partyA          CivilNode      @relation("ContractPartyA", fields: [partyAId], references: [id])
+  partyBId        String         @db.Uuid
+  partyB          CivilNode      @relation("ContractPartyB", fields: [partyBId], references: [id])
+  parties         ContractParty[]
+  artifacts       Artifact[]
+  autopoiesisLogs AutopoiesisLog[]
+
+  // Índices
+  @@index([type])
+  @@index([status])
+  @@index([domainId])
+  @@index([partyAId])
+  @@index([partyBId])
+  @@index([validFrom])
+  @@index([validUntil])
+  @@map("contracts")
+}
+
+/// ContractParty - Relación many-to-many entre Contratos e Identidades
+model ContractParty {
+  id          String    @id @default(uuid()) @db.Uuid
+  contractId  String    @db.Uuid
+  identityId  String    @db.Uuid
+  role        String    // Rol de la parte en el contrato
+  signedAt    DateTime?
+  
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  // Relaciones
+  contract    Contract  @relation(fields: [contractId], references: [id], onDelete: Cascade)
+  identity    Identity  @relation(fields: [identityId], references: [id], onDelete: Cascade)
+
+  @@unique([contractId, identityId])
+  @@index([contractId])
+  @@index([identityId])
+  @@map("contract_parties")
+}
+
+/// Artifact - Artefactos Civilizatorios
+/// Código, notebooks, infraestructura, dashboards, políticas
+model Artifact {
+  id            String         @id @default(uuid()) @db.Uuid
+  type          ArtifactType
+  name          String
+  content       String?        // Contenido o referencia al contenido
