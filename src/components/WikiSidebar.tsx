@@ -45,6 +45,11 @@ const extras = [
   { title: "Documentación", url: "/documentacion", icon: FileText },
   { title: "Manuales", url: "/manuales", icon: BookMarked },
   { title: "Gobernanza", url: "/gobernanza", icon: Shield },
+  { title: "Despliegue", url: "/despliegue", icon: Rocket },
+  { title: "Biografía CEO", url: "/biografia-ceo", icon: Crown },
+  { title: "Casos de Uso", url: "/casos-de-uso", icon: Briefcase },
+  { title: "Kit APIs", url: "/kit-apis", icon: Plug },
+  { title: "Estrategia", url: "/estrategia", icon: Target },
 ];
 
 export function WikiSidebar() {

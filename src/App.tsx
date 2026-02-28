@@ -46,6 +46,11 @@ const App = () => (
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/sistemas-avanzados" element={<SistemasAvanzados />} />
             <Route path="/manuales" element={<Manuales />} />
+            <Route path="/despliegue" element={<Despliegue />} />
+            <Route path="/biografia-ceo" element={<BiografiaCEO />} />
+            <Route path="/casos-de-uso" element={<CasosDeUso />} />
+            <Route path="/kit-apis" element={<KitAPIs />} />
+            <Route path="/estrategia" element={<Estrategia />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </WikiLayout>
