@@ -17,6 +17,11 @@ import Gobernanza from "./pages/Gobernanza";
 import Dashboard from "./pages/Dashboard";
 import SistemasAvanzados from "./pages/SistemasAvanzados";
 import Manuales from "./pages/Manuales";
+import Despliegue from "./pages/Despliegue";
+import BiografiaCEO from "./pages/BiografiaCEO";
+import CasosDeUso from "./pages/CasosDeUso";
+import KitAPIs from "./pages/KitAPIs";
+import Estrategia from "./pages/Estrategia";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
