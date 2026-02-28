@@ -24,6 +24,9 @@ const searchIndex = [
   { title: "Línea de Tiempo", url: "/timeline", keywords: "historia hitos cronología 2020 2024 2025 2026" },
   { title: "Documentación", url: "/documentacion", keywords: "api docs técnica guías tutoriales" },
   { title: "Gobernanza y Políticas", url: "/gobernanza", keywords: "roles contribución plantillas revisión compliance estándares" },
+  { title: "Dashboard de Monitoreo", url: "/dashboard", keywords: "nodos estado grafana métricas latencia cpu alertas monitoreo" },
+  { title: "Sistemas Avanzados", url: "/sistemas-avanzados", keywords: "hexagonal pipeline eoct quantum filtración caliente frío" },
+  { title: "Manuales de Usuario", url: "/manuales", keywords: "guía manual inicio rápido faq redundancia desarrollo seguridad" },
 ];
 
 export function WikiSearch() {

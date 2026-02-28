@@ -14,6 +14,9 @@ import IAAgentes from "./pages/IAAgentes";
 import Timeline from "./pages/Timeline";
 import Documentacion from "./pages/Documentacion";
 import Gobernanza from "./pages/Gobernanza";
+import Dashboard from "./pages/Dashboard";
+import SistemasAvanzados from "./pages/SistemasAvanzados";
+import Manuales from "./pages/Manuales";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -35,6 +38,9 @@ const App = () => (
             <Route path="/timeline" element={<Timeline />} />
             <Route path="/documentacion" element={<Documentacion />} />
             <Route path="/gobernanza" element={<Gobernanza />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/sistemas-avanzados" element={<SistemasAvanzados />} />
+            <Route path="/manuales" element={<Manuales />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </WikiLayout>
