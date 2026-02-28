@@ -17,6 +17,11 @@ import Gobernanza from "./pages/Gobernanza";
 import Dashboard from "./pages/Dashboard";
 import SistemasAvanzados from "./pages/SistemasAvanzados";
 import Manuales from "./pages/Manuales";
+import Despliegue from "./pages/Despliegue";
+import BiografiaCEO from "./pages/BiografiaCEO";
+import CasosDeUso from "./pages/CasosDeUso";
+import KitAPIs from "./pages/KitAPIs";
+import Estrategia from "./pages/Estrategia";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -41,6 +46,11 @@ const App = () => (
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/sistemas-avanzados" element={<SistemasAvanzados />} />
             <Route path="/manuales" element={<Manuales />} />
+            <Route path="/despliegue" element={<Despliegue />} />
+            <Route path="/biografia-ceo" element={<BiografiaCEO />} />
+            <Route path="/casos-de-uso" element={<CasosDeUso />} />
+            <Route path="/kit-apis" element={<KitAPIs />} />
+            <Route path="/estrategia" element={<Estrategia />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </WikiLayout>

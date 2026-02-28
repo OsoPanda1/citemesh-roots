@@ -1,7 +1,7 @@
 import {
   BookOpen, Landmark, Layers, Shield, Brain, Clock, FileText,
   Home, Network, GraduationCap, Globe, Coins, ChevronDown,
-  Activity, Cpu, BookMarked,
+  Activity, Cpu, BookMarked, Rocket, Crown, Briefcase, Plug, Target,
 } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { useLocation } from "react-router-dom";
@@ -45,6 +45,11 @@ const extras = [
   { title: "Documentación", url: "/documentacion", icon: FileText },
   { title: "Manuales", url: "/manuales", icon: BookMarked },
   { title: "Gobernanza", url: "/gobernanza", icon: Shield },
+  { title: "Despliegue", url: "/despliegue", icon: Rocket },
+  { title: "Biografía CEO", url: "/biografia-ceo", icon: Crown },
+  { title: "Casos de Uso", url: "/casos-de-uso", icon: Briefcase },
+  { title: "Kit APIs", url: "/kit-apis", icon: Plug },
+  { title: "Estrategia", url: "/estrategia", icon: Target },
 ];
 
 export function WikiSidebar() {

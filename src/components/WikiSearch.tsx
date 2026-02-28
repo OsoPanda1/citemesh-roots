@@ -27,6 +27,11 @@ const searchIndex = [
   { title: "Dashboard de Monitoreo", url: "/dashboard", keywords: "nodos estado grafana métricas latencia cpu alertas monitoreo" },
   { title: "Sistemas Avanzados", url: "/sistemas-avanzados", keywords: "hexagonal pipeline eoct quantum filtración caliente frío" },
   { title: "Manuales de Usuario", url: "/manuales", keywords: "guía manual inicio rápido faq redundancia desarrollo seguridad" },
+  { title: "Despliegue Universal", url: "/despliegue", keywords: "deploy cloud on-premise federada certificación docker terraform" },
+  { title: "Biografía CEO", url: "/biografia-ceo", keywords: "edwin anubis villaseñor fundador ceo castillo trejo" },
+  { title: "Casos de Uso", url: "/casos-de-uso", keywords: "universidad gobierno empresa comunidad fintech ejemplos implementación" },
+  { title: "Kit de APIs", url: "/kit-apis", keywords: "api rest endpoints sdk integración conectores external" },
+  { title: "Estrategia Comercial", url: "/estrategia", keywords: "marketing venta posicionamiento segmentos negocio plantilla replicable" },
 ];
 
 export function WikiSearch() {
