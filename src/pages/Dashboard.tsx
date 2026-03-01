@@ -3,10 +3,10 @@ import { Section } from "@/components/WikiElements";
 import { motion } from "framer-motion";
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
-  PieChart, Pie, Cell, LineChart, Line, RadarChart, Radar, PolarGrid,
+  PieChart, Pie, Cell, RadarChart, Radar, PolarGrid,
   PolarAngleAxis, PolarRadiusAxis, Area, AreaChart,
 } from "recharts";
-import { Activity, Server, Shield, Wifi, Cpu, HardDrive, Zap, AlertTriangle } from "lucide-react";
+import { Activity, Server, Shield, Wifi, Cpu, HardDrive, Zap, AlertTriangle, Eye } from "lucide-react";
 
 const nodeStatus = [
   { name: "ID-NVIDA", activos: 8, inactivos: 1, latencia: 12 },
@@ -68,136 +68,25 @@ const StatusDot = ({ status }: { status: "ok" | "warn" | "error" }) => (
 
 const Dashboard = () => (
   <WikiPage title="Dashboard de Monitoreo" subtitle="Estado en tiempo real de nodos federados y dominios TAMV">
-    {/* Stat Cards */}
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
-      {statCards.map((s, i) => (
-        <motion.div
-          key={s.label}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: i * 0.05 }}
-          className="rounded-lg border border-border/50 bg-card/60 p-3"
-        >
-          <div className="flex items-center justify-between mb-2">
-            <s.icon className="h-4 w-4 text-muted-foreground" />
-            <StatusDot status={s.status} />
-          </div>
-          <div className="text-lg font-bold text-foreground">{s.value}</div>
-          <div className="text-xs text-muted-foreground">{s.label}</div>
-        </motion.div>
-      ))}
-    </div>
-
-    {/* Charts Row 1 */}
-    <Section title="Nodos por dominio">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="rounded-lg border border-border/50 bg-card/40 p-4">
-          <h4 className="text-sm font-medium text-muted-foreground mb-3">Nodos activos vs inactivos</h4>
-          <ResponsiveContainer width="100%" height={260}>
-            <BarChart data={nodeStatus}>
-              <CartesianGrid strokeDasharray="3 3" stroke="hsl(220, 15%, 18%)" />
-              <XAxis dataKey="name" tick={{ fill: "hsl(220, 10%, 55%)", fontSize: 11 }} />
-              <YAxis tick={{ fill: "hsl(220, 10%, 55%)", fontSize: 11 }} />
-              <Tooltip
-                contentStyle={{ background: "hsl(220, 18%, 10%)", border: "1px solid hsl(220, 15%, 18%)", borderRadius: 8, color: "hsl(45, 10%, 90%)" }}
-              />
-              <Bar dataKey="activos" fill="hsl(38, 90%, 55%)" radius={[4, 4, 0, 0]} />
-              <Bar dataKey="inactivos" fill="hsl(0, 70%, 55%)" radius={[4, 4, 0, 0]} />
-            </BarChart>
-          </ResponsiveContainer>
+    {/* Visibility by membership */}
+    <Section title="Visibilidad por nivel de membresía">
+      <div className="rounded-lg border border-border/50 bg-muted/20 p-4 mb-2">
+        <div className="flex items-start gap-2 mb-3">
+          <Eye className="h-4 w-4 text-primary mt-0.5 shrink-0" />
+          <p className="text-sm text-muted-foreground">
+            La información visible en este dashboard varía según tu nivel de membresía:
+          </p>
         </div>
-
-        <div className="rounded-lg border border-border/50 bg-card/40 p-4">
-          <h4 className="text-sm font-medium text-muted-foreground mb-3">Salud de dominios (%)</h4>
-          <ResponsiveContainer width="100%" height={260}>
-            <PieChart>
-              <Pie data={domainHealth} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={90} label={({ name, value }) => `${name}: ${value}%`}>
-                {domainHealth.map((_, i) => (
-                  <Cell key={i} fill={COLORS[i % COLORS.length]} />
-                ))}
-              </Pie>
-              <Tooltip contentStyle={{ background: "hsl(220, 18%, 10%)", border: "1px solid hsl(220, 15%, 18%)", borderRadius: 8, color: "hsl(45, 10%, 90%)" }} />
-            </PieChart>
-          </ResponsiveContainer>
-        </div>
-      </div>
-    </Section>
-
-    {/* Charts Row 2 */}
-    <Section title="Actividad temporal">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="rounded-lg border border-border/50 bg-card/40 p-4">
-          <h4 className="text-sm font-medium text-muted-foreground mb-3">Carga del sistema (24h)</h4>
-          <ResponsiveContainer width="100%" height={220}>
-            <AreaChart data={timelineData}>
-              <CartesianGrid strokeDasharray="3 3" stroke="hsl(220, 15%, 18%)" />
-              <XAxis dataKey="hora" tick={{ fill: "hsl(220, 10%, 55%)", fontSize: 11 }} />
-              <YAxis tick={{ fill: "hsl(220, 10%, 55%)", fontSize: 11 }} />
-              <Tooltip contentStyle={{ background: "hsl(220, 18%, 10%)", border: "1px solid hsl(220, 15%, 18%)", borderRadius: 8, color: "hsl(45, 10%, 90%)" }} />
-              <Area type="monotone" dataKey="carga" stroke="hsl(38, 90%, 55%)" fill="hsl(38, 90%, 55%)" fillOpacity={0.15} />
-            </AreaChart>
-          </ResponsiveContainer>
-        </div>
-
-        <div className="rounded-lg border border-border/50 bg-card/40 p-4">
-          <h4 className="text-sm font-medium text-muted-foreground mb-3">Métricas de resiliencia</h4>
-          <ResponsiveContainer width="100%" height={220}>
-            <RadarChart data={radarData}>
-              <PolarGrid stroke="hsl(220, 15%, 18%)" />
-              <PolarAngleAxis dataKey="metric" tick={{ fill: "hsl(220, 10%, 55%)", fontSize: 10 }} />
-              <PolarRadiusAxis tick={{ fill: "hsl(220, 10%, 55%)", fontSize: 9 }} />
-              <Radar dataKey="value" stroke="hsl(185, 70%, 45%)" fill="hsl(185, 70%, 45%)" fillOpacity={0.2} />
-            </RadarChart>
-          </ResponsiveContainer>
-        </div>
-      </div>
-    </Section>
-
-    {/* Node Table */}
-    <Section title="Detalle de nodos federados">
-      <div className="rounded-lg border border-border/50 overflow-hidden">
-        <table className="w-full text-sm">
-          <thead>
-            <tr className="bg-muted/30">
-              <th className="text-left px-4 py-2 text-muted-foreground font-medium">Dominio</th>
-              <th className="text-center px-4 py-2 text-muted-foreground font-medium">Activos</th>
-              <th className="text-center px-4 py-2 text-muted-foreground font-medium">Inactivos</th>
-              <th className="text-center px-4 py-2 text-muted-foreground font-medium">Latencia</th>
-              <th className="text-center px-4 py-2 text-muted-foreground font-medium">Estado</th>
-            </tr>
-          </thead>
-          <tbody>
-            {nodeStatus.map((n) => (
-              <tr key={n.name} className="border-t border-border/30 hover:bg-muted/10 transition-colors">
-                <td className="px-4 py-2.5 font-medium text-foreground">{n.name}</td>
-                <td className="px-4 py-2.5 text-center text-foreground">{n.activos}</td>
-                <td className="px-4 py-2.5 text-center text-foreground">{n.inactivos}</td>
-                <td className="px-4 py-2.5 text-center text-muted-foreground">{n.latencia}ms</td>
-                <td className="px-4 py-2.5 text-center">
-                  <StatusDot status={n.inactivos === 0 ? "ok" : "warn"} />
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </Section>
-
-    <Section title="Infraestructura de observabilidad">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-        {[
-          { title: "Grafana", desc: "Dashboards y alertas visuales para métricas de nodos, servicios y dominios en tiempo real." },
-          { title: "Terraform", desc: "IaC para provisioning reproducible de infraestructura federada multi-región." },
-          { title: "Prisma", desc: "ORM tipado para acceso a datos con migraciones versionadas y auditoría de esquemas." },
-        ].map((t) => (
-          <div key={t.title} className="rounded-lg border border-border/50 bg-card/50 p-4">
-            <h4 className="font-semibold text-primary text-sm mb-1">{t.title}</h4>
-            <p className="text-xs text-muted-foreground leading-relaxed">{t.desc}</p>
-          </div>
-        ))}
-      </div>
-    </Section>
-  </WikiPage>
-);
-
-export default Dashboard;
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+          {[
+            { level: "Free", visibility: "Sin acceso al dashboard" },
+            { level: "Premium", visibility: "Indicadores agregados globales (solo lectura)" },
+            { level: "Devs", visibility: "Métricas por dominio, gráficas de tendencia" },
+            { level: "Advance", visibility: "Estado de nodo propio, alertas personalizadas, SLAs" },
+            { level: "Enterprise", visibility: "Vista completa: todos los nodos, métricas detalladas, configuración" },
+          ].map((v) => (
+            <div key={v.level} className="rounded-md border border-border/50 bg-card/50 p-2.5">
+              <span className="text-xs font-semibold text-foreground">{v.level}</span>
+              <p className="text-xs text-muted-foreground mt-0.5">{v.visibility}</p>
+            </div>
+          ))}</

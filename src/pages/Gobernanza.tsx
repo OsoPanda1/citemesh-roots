@@ -1,6 +1,6 @@
 import { WikiPage } from "@/components/WikiPage";
 import { Section, InfoCard } from "@/components/WikiElements";
-import { Shield, Users, FileCheck, RefreshCw, BookOpen, Scale, Eye, GitBranch, Globe } from "lucide-react";
+import { Shield, Users, FileCheck, RefreshCw, BookOpen, Scale, Eye, GitBranch, Globe, Crown, Code, Building, Landmark } from "lucide-react";
 
 const Gobernanza = () => (
   <WikiPage
@@ -24,30 +24,97 @@ const Gobernanza = () => (
 
     <Section title="Roles del ecosistema">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <InfoCard
-          icon={Shield}
-          title="Fundador / Guardián Supremo"
-          description="Anubis Villaseñor (Edwin Oswaldo Castillo Trejo). Visión, arquitectura y decisiones finales del ecosistema."
-          variant="gold"
-        />
-        <InfoCard
-          icon={Users}
-          title="Colaboradores de Alta Confianza"
-          description="Fase inicial: solo el fundador y colaboradores directos validan y editan contenido crítico."
-          variant="cyan"
-        />
-        <InfoCard
-          icon={FileCheck}
-          title="Contribuidores Moderados"
-          description="Fase posterior: contribuciones abiertas moderadas mediante pull requests y sugerencias revisadas."
-          variant="gold"
-        />
-        <InfoCard
-          icon={Eye}
-          title="Dueños de Sección"
-          description="Cada página o sección tiene un responsable que garantiza la precisión y vigencia del contenido."
-          variant="cyan"
-        />
+        <InfoCard icon={Shield} title="Fundador / Guardián Supremo" description="Anubis Villaseñor (Edwin Oswaldo Castillo Trejo). Visión, arquitectura y decisiones finales del ecosistema." variant="gold" />
+        <InfoCard icon={Users} title="Colaboradores de Alta Confianza" description="Fase inicial: solo el fundador y colaboradores directos validan y editan contenido crítico." variant="cyan" />
+        <InfoCard icon={FileCheck} title="Contribuidores Moderados" description="Fase posterior: contribuciones abiertas moderadas mediante pull requests y sugerencias revisadas." variant="gold" />
+        <InfoCard icon={Eye} title="Dueños de Sección" description="Cada página o sección tiene un responsable que garantiza la precisión y vigencia del contenido." variant="cyan" />
+      </div>
+    </Section>
+
+    <Section title="Membresías y roles de participación">
+      <p className="text-muted-foreground leading-relaxed mb-4">
+        Cada nivel de membresía del ecosistema TAMV se asocia a un rol de participación en la gobernanza,
+        definiendo el alcance de las decisiones que cada miembro puede influir.
+      </p>
+      <div className="space-y-3">
+        {[
+          { icon: Users, level: "Free", role: "Observador civilizatorio", permissions: "Acceso de lectura a la wiki y Social Core. Voz en foros públicos, sin voto en gobernanza." },
+          { icon: BookOpen, level: "Premium", role: "Usuario avanzado", permissions: "Acceso a dashboards y contenidos ampliados. Voz en Social Core con participación limitada en encuestas." },
+          { icon: Code, level: "Devs", role: "Desarrollador TAMV", permissions: "Puede proponer cambios técnicos (PR/MR) en dominios asignados. Participa en revisiones de código y Social Core." },
+          { icon: Building, level: "Advance", role: "Operador / Aliado institucional", permissions: "Participa en decisiones de despliegue federado. Puede configurar nodos y proponer políticas de dominio." },
+          { icon: Crown, level: "Enterprise", role: "Nodo federado / Entidad civilizatoria asociada", permissions: "Gobernanza compartida con el ecosistema. Voto en decisiones críticas, designación de guardianes de nodo." },
+        ].map((m) => (
+          <div key={m.level} className="rounded-lg border border-border/50 bg-card/60 p-4">
+            <div className="flex items-center gap-2 mb-2">
+              <m.icon className="h-4 w-4 text-primary shrink-0" />
+              <h4 className="font-semibold text-foreground text-sm">{m.level} — {m.role}</h4>
+            </div>
+            <p className="text-xs text-muted-foreground pl-6">{m.permissions}</p>
+          </div>
+        ))}
+      </div>
+    </Section>
+
+    <Section title="Mapa de decisiones por nivel">
+      <div className="rounded-lg border border-border/50 overflow-x-auto">
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="bg-muted/30 border-b border-border/50">
+              <th className="text-left px-3 py-2.5 text-foreground font-medium text-xs">Tipo de decisión</th>
+              <th className="text-center px-2 py-2.5 text-foreground font-medium text-xs">Free</th>
+              <th className="text-center px-2 py-2.5 text-foreground font-medium text-xs">Premium</th>
+              <th className="text-center px-2 py-2.5 text-foreground font-medium text-xs">Devs</th>
+              <th className="text-center px-2 py-2.5 text-foreground font-medium text-xs">Advance</th>
+              <th className="text-center px-2 py-2.5 text-foreground font-medium text-xs">Enterprise</th>
+            </tr>
+          </thead>
+          <tbody className="text-xs text-muted-foreground">
+            {[
+              { decision: "Voz en Social Core", levels: ["✔️", "✔️", "✔️", "✔️", "✔️"] },
+              { decision: "Proponer contenido wiki", levels: ["❌", "✔️", "✔️", "✔️", "✔️"] },
+              { decision: "PRs técnicos en dominios", levels: ["❌", "❌", "✔️", "✔️", "✔️"] },
+              { decision: "Configurar nodos propios", levels: ["❌", "❌", "❌", "✔️", "✔️"] },
+              { decision: "Decisiones de despliegue federado", levels: ["❌", "❌", "❌", "✔️", "✔️"] },
+              { decision: "Voto en gobernanza crítica", levels: ["❌", "❌", "❌", "❌", "✔️"] },
+              { decision: "Designar guardianes de nodo", levels: ["❌", "❌", "❌", "❌", "✔️"] },
+            ].map((row) => (
+              <tr key={row.decision} className="border-b border-border/30">
+                <td className="px-3 py-2 text-foreground">{row.decision}</td>
+                {row.levels.map((v, i) => (
+                  <td key={i} className="px-2 py-2 text-center">{v}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </Section>
+
+    <Section title="Sistema de Certificación Federada TAMV">
+      <p className="text-muted-foreground leading-relaxed mb-4">
+        Cada réplica del ecosistema TAMV puede alcanzar un nivel de certificación federada que
+        valida su cumplimiento técnico, ético y operativo dentro de la red.
+      </p>
+      <div className="space-y-3">
+        {[
+          { level: "Nodo Observador", criteria: "Registro básico, cumplimiento mínimo de estándares. Acceso de lectura a la federación. Asociado a niveles Free/Premium.", color: "text-muted-foreground" },
+          { level: "Nodo Colaborador", criteria: "Cumplimiento técnico parcial (seguridad base, APIs estándar). Puede aportar datos y propuestas. Asociado a nivel Devs.", color: "text-secondary" },
+          { level: "Nodo Operador", criteria: "Cumplimiento técnico completo, uptime > 99.5%, auditoría aprobada. Opera servicios activos. Asociado a nivel Advance.", color: "text-primary" },
+          { level: "Nodo Guardián", criteria: "Máximo nivel. Cumplimiento ético y contractual total, guardián de nodo designado, participación activa en gobernanza. Solo Enterprise.", color: "text-primary" },
+        ].map((n) => (
+          <div key={n.level} className="rounded-lg border border-border/50 bg-card/50 p-4">
+            <h4 className={`font-semibold text-sm ${n.color}`}>{n.level}</h4>
+            <p className="text-xs text-muted-foreground mt-1">{n.criteria}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="rounded-lg border border-primary/20 bg-primary/5 p-4 mt-4">
+        <p className="text-sm text-muted-foreground">
+          <strong className="text-primary">Proceso de certificación:</strong> Solicitud → Auditoría técnica (seguridad, uptime, APIs)
+          → Auditoría de gobernanza (ética, documentación, comunidad) → Emisión de certificado con firma criptográfica
+          → Revisión periódica cada 12 meses.
+        </p>
       </div>
     </Section>
 

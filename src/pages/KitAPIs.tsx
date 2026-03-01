@@ -1,7 +1,7 @@
 import { WikiPage } from "@/components/WikiPage";
 import { Section } from "@/components/WikiElements";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Plug, Shield, GraduationCap, Globe, Coins, Brain } from "lucide-react";
+import { Plug, Shield, GraduationCap, Globe, Coins, Brain, AlertTriangle } from "lucide-react";
 
 const endpoints = {
   identidad: [
@@ -77,6 +77,62 @@ const KitAPIs = () => (
         <div>Content-Type: application/json</div>
         <div className="mt-2 text-primary"># Rate limits por defecto</div>
         <div>100 req/min (anónimo) | 1000 req/min (autenticado) | 10000 req/min (nodo federado)</div>
+      </div>
+    </Section>
+
+    <Section title="Acceso por nivel de membresía">
+      <div className="rounded-lg border border-border/50 bg-muted/20 p-4 mb-6">
+        <div className="flex items-start gap-2 mb-3">
+          <AlertTriangle className="h-4 w-4 text-primary mt-0.5 shrink-0" />
+          <p className="text-sm text-muted-foreground">
+            El acceso a endpoints varía según el nivel de membresía. Los <strong className="text-foreground">rate limits</strong> y
+            <strong className="text-foreground"> dominios disponibles</strong> dependen del plan contratado.
+          </p>
+        </div>
+        <div className="rounded-lg border border-border/50 overflow-x-auto">
+          <table className="w-full text-xs">
+            <thead>
+              <tr className="bg-muted/30 border-b border-border/50">
+                <th className="text-left px-3 py-2 text-foreground font-medium">Nivel</th>
+                <th className="text-left px-3 py-2 text-foreground font-medium">Acceso</th>
+                <th className="text-center px-3 py-2 text-foreground font-medium">Rate Limit</th>
+                <th className="text-left px-3 py-2 text-foreground font-medium">Restricciones</th>
+              </tr>
+            </thead>
+            <tbody className="text-muted-foreground">
+              <tr className="border-b border-border/30">
+                <td className="px-3 py-2 font-medium text-foreground">Free</td>
+                <td className="px-3 py-2">Sin acceso a APIs</td>
+                <td className="px-3 py-2 text-center">—</td>
+                <td className="px-3 py-2">Solo lectura de documentación pública</td>
+              </tr>
+              <tr className="border-b border-border/30">
+                <td className="px-3 py-2 font-medium text-foreground">Premium</td>
+                <td className="px-3 py-2">Docs read-only</td>
+                <td className="px-3 py-2 text-center">—</td>
+                <td className="px-3 py-2">Documentación completa sin sandbox</td>
+              </tr>
+              <tr className="border-b border-border/30">
+                <td className="px-3 py-2 font-medium text-foreground">Devs</td>
+                <td className="px-3 py-2">Sandbox completo</td>
+                <td className="px-3 py-2 text-center">500 req/min</td>
+                <td className="px-3 py-2">Sin acceso a Seguridad crítica ni Certificación</td>
+              </tr>
+              <tr className="border-b border-border/30">
+                <td className="px-3 py-2 font-medium text-foreground">Advance</td>
+                <td className="px-3 py-2">Producción parcial</td>
+                <td className="px-3 py-2 text-center">2000 req/min</td>
+                <td className="px-3 py-2">Sin acceso a NOA operativo ni Certificación emisión</td>
+              </tr>
+              <tr>
+                <td className="px-3 py-2 font-medium text-foreground">Enterprise</td>
+                <td className="px-3 py-2">Producción completa</td>
+                <td className="px-3 py-2 text-center">10000 req/min</td>
+                <td className="px-3 py-2">Acceso total. SLA dedicado.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </Section>
 
