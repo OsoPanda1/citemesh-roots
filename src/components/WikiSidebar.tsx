@@ -1,7 +1,7 @@
 import {
   BookOpen, Landmark, Layers, Shield, Brain, Clock, FileText,
   Home, Network, GraduationCap, Globe, Coins, ChevronDown,
-  Activity, Cpu, BookMarked, Rocket, Crown, Briefcase, Plug, Target,
+  Activity, Cpu, BookMarked, Rocket, Crown, Briefcase, Plug, Target, Library,
 } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { useLocation } from "react-router-dom";
@@ -27,6 +27,7 @@ const mainNav = [
   { title: "Introducción", url: "/introduccion", icon: BookOpen },
   { title: "Filosofía y Códice", url: "/filosofia", icon: Landmark },
   { title: "Arquitectura", url: "/arquitectura", icon: Layers },
+  { title: "WikiTAMV", url: "/wikitamv", icon: Library },
 ];
 
 const dominios = [

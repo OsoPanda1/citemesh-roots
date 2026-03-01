@@ -24,6 +24,7 @@ import BiografiaCEO from "./pages/BiografiaCEO";
 import CasosDeUso from "./pages/CasosDeUso";
 import KitAPIs from "./pages/KitAPIs";
 import Estrategia from "./pages/Estrategia";
+import WikiTAMV from "./pages/WikiTAMV";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -58,6 +59,7 @@ const App = () => {
                 <Route path="/casos-de-uso" element={<CasosDeUso />} />
                 <Route path="/kit-apis" element={<KitAPIs />} />
                 <Route path="/estrategia" element={<Estrategia />} />
+                <Route path="/wikitamv" element={<WikiTAMV />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </WikiLayout>
