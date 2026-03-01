@@ -19,8 +19,10 @@
 8. [Inteligencia Artificial: Isabella](#8-inteligencia-artificial-isabella)
 9. [Infraestructura Técnica](#9-infraestructura-técnica)
 10. [Gobernanza y Códice](#10-gobernanza-y-códice)
-11. [ roadmap de Evolución](#11-roadmap-de-evolución)
-12. [Glosario Unificado](#12-glosario-unificado)
+11. [Módulos Avanzados](#11-módulos-avanzados)
+12. [Integraciones Externas](#12-integraciones-externas)
+13. [ roadmap de Evolución](#13-roadmap-de-evolución)
+14. [Glosario Unificado](#14-glosario-unificado)
 
 ---
 
@@ -39,6 +41,8 @@
 | **Soberanía > Dependencia** | Autonomía de datos y conocimiento |
 | **Autopoiesis Continua** | El sistema se reproduce y mejora a sí mismo |
 | **Resiliencia Civilizatoria** | Persistencia más allá de componentes individuales |
+| **Evolución > Estática** | Integración de mejoras sin degradar |
+| **Soberanía Digital** | Control absoluto sobre infraestructura |
 
 ### 1.3 Objetivos Estratégicos
 
@@ -47,6 +51,8 @@
 3. **Independencia Económica**: Sistema económico propio y ético
 4. **Conexión Comunitaria**: Red de comunidades conscientes
 5. **Infraestructura Soberana**: Control total sobre tecnología
+6. **Interoperabilidad**: Conexión con sistemas externos
+7. **Educación Accesible**: Academy para todos
 
 ---
 
@@ -465,9 +471,280 @@ tamv-core/
 
 ---
 
-## 11. ROADMAP DE EVOLUCIÓN
+## 11. MÓDULOS AVANZADOS
 
-### 11.1 Fases de Desarrollo
+### 11.1 TAMV Nexus Core (`tamv-nexus-core`)
+
+El núcleo central del sistema Nexus que gestiona todas las conexiones y comunicaciones entre módulos.
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    NEXUS CORE                              │
+├─────────────────────────────────────────────────────────────┤
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐       │
+│  │  Connector  │  │   Router   │  │   Bridge   │       │
+│  │   Manager   │  │   Service   │  │   Module   │       │
+│  └─────────────┘  └─────────────┘  └─────────────┘       │
+│                                                             │
+│  ┌─────────────────────────────────────────────────────┐   │
+│  │           Message Queue & Event Bus                 │   │
+│  └─────────────────────────────────────────────────────┘   │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### 11.2 TAMV Orchestrator (`tamv-orchestrator`)
+
+Orquestador central que coordina la ejecución de servicios y procesos distribuidos.
+
+| Componente | Función |
+|------------|---------|
+| **Service Orchestrator** | Coordina microservicios |
+| **Job Scheduler** | Programación de tareas |
+| **Workflow Engine** | Gestión de flujos de trabajo |
+| **Resource Manager** | Asignación de recursos |
+
+### 11.3 Federacion TAMV (`federacion-tamv`)
+
+Sistema de federación que conecta múltiples nodos TAMV en una red colaborativa.
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                 FEDERACIÓN TAMV                             │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│   ┌──────────┐     ┌──────────┐     ┌──────────┐         │
+│   │  Nodo A  │◄───►│  Nodo B  │◄───►│  Nodo C  │         │
+│   │ (Mexico) │     │(España)  │     │(Argentina)        │
+│   └──────────┘     └──────────┘     └──────────┘         │
+│        │                │                │                │
+│        └────────────────┼────────────────┘                │
+│                         ▼                                 │
+│              ┌──────────────────────┐                   │
+│              │   Consensus Layer    │                   │
+│              │  (CRDT + Raft/PBFT) │                   │
+│              └──────────────────────┘                   │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### 11.4 Dream Weaver (`dream-weaver`)
+
+Módulo de creación de experiencias oníricas y contenido immersivo.
+
+- Generación procedural de mundos
+- Narrativas adaptativas
+- Integración con NEBULAIA
+- Construcción de realidades compartidas
+
+### 11.5 RAGBot Starter (`ragbot-starter`)
+
+Sistema de Retrieval-Augmented Generation para chatbots inteligentes.
+
+| Característica | Descripción |
+|----------------|-------------|
+| **Vector Store** | Almacenamiento de embeddings |
+| **Retrieval** | Búsqueda semántica |
+| **Generation** | Generación de respuestas |
+| **Memory** | Memoria conversacional |
+
+### 11.6 Minter Contract (`minter-contract`)
+
+Smart contract para minting de NFTs y tokens en TAMV Chain.
+
+```solidity
+// Contrato básico de minter
+contract TAMVMinter {
+    function mint(address to, uint256 tokenId, string uri) external;
+    function batchMint(address to, uint256[] tokenIds, string[] uris) external;
+    function burn(uint256 tokenId) external;
+    function getRoyaltyInfo(uint256 tokenId) external view returns (address, uint256);
+}
+```
+
+---
+
+## 12. INTEGRACIONES EXTERNAS
+
+### 12.1 Thanubis Userbot
+
+Integración con Telegram para automatización y gestión de comunidades.
+
+| Módulo | Función |
+|--------|---------|
+| **UserBot Core** | Automatización de tareas |
+| **Command Handler** | Procesamiento de comandos |
+| **Media Handler** | Gestión de archivos |
+| **Plugin System** | Sistema de plugins extensible |
+
+### 12.2 Anubisgram
+
+Plataforma social estilo Instagram con soberanía del usuario.
+
+- ** feed algorítmico** personalizado
+- ** Stories** efímeras
+- ** Messaging** encriptado
+- ** NFT** para contenido
+
+### 12.3 RSSHub
+
+Agregador de feeds RSS/Atom para integración de contenido externo.
+
+```
+RSSHub → Content Aggregator → TAMV Content API → User Feed
+```
+
+### 12.4 Omniverse Hub
+
+Integración con NVIDIA Omniverse para experiencias 3D colaborativas.
+
+- **USD Support**: Universal Scene Description
+- **Real-time Collaboration**: Múltiples usuarios
+- **Physics Simulation**: Simulación física avanzada
+- **AI Integration**: Conectores AI
+
+### 12.5 Alamexa Design System
+
+Sistema de diseño unificado para todas las interfaces TAMV.
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                 ALAMEXA DESIGN SYSTEM                       │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐      │
+│  │ Tokens  │  │Atomics │  │Molecules│  │Organisms│      │
+│  │ Colors, │  │ Button, │  │  Card,  │  │ Header, │      │
+│  │ Spacing │  │  Input  │  │  Form   │  │  Footer │      │
+│  └─────────┘  └─────────┘  └─────────┘  └─────────┘      │
+│                                                             │
+│  ┌─────────────────────────────────────────────────────┐   │
+│  │              Component Library                       │   │
+│  │         React + Vue + Web Components                │   │
+│  └─────────────────────────────────────────────────────┘   │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### 12.6 Access Academy
+
+Plataforma educativa con acceso universal.
+
+| Característica | Descripción |
+|----------------|-------------|
+| **Cursos** | Contenido educativo diversos |
+| **Certificaciones** | Credenciales verificables |
+| **Mentorship** | Guía de mentores IA |
+| **Laboratorios** | Entornos prácticos |
+
+### 12.7 Web 4.0 Genesis
+
+Implementación de estándares Web 4.0 para el ecosistema.
+
+- **Semantic Web**: RDF, OWL, SPARQL
+- **Decentralized Identity**: DID, Verifiable Credentials
+- **AI-Native**: Agentes IA como ciudadanos web
+- **Spatial Web**: Integración 3D/WebXR
+
+### 12.8 Sovereign Union
+
+Unión de entidades soberanas dentro del ecosistema TAMV.
+
+- **Treaty System**: Acuerdos entre nodos
+- **Arbitration**: Resolución de conflictos
+- **Shared Resources**: Recursos compartidos
+- **Collective Governance**: Gobernanza colectiva
+
+### 12.9 TAMV Universe Online
+
+Universo virtual completo con múltiples dimensiones.
+
+- **Multi-realm Support**: Múltiples realms
+| **Cross-dimension Travel**: Viaje entre dimensiones
+- **Persistent World**: Mundo persistente
+- **User-generated Content**: Contenido generado por usuarios
+
+### 12.10 Conda Environment
+
+Gestión de entornos para el ecosistema TAMV.
+
+```bash
+# Entorno base TAMV
+conda create -n tamv python=3.11
+conda activate tamv
+pip install tamv-core tamv-ai tamv-nexus
+```
+
+### 12.11 Telegram Reverse Shell Lib
+
+Biblioteca para gestión remota segura.
+
+- **Encrypted Communication**: Comunicación encriptada
+- **Command Execution**: Ejecución remota
+- **File Transfer**: Transferencia de archivos
+- **Session Management**: Gestión de sesiones
+
+### 12.12 TWA Template
+
+Template para Telegram Web Apps.
+
+```html
+<!-- TWA Template Base -->
+<script src="https://telegram.org/js/twa.js"></script>
+<script>
+  Telegram.WebApp.ready();
+  Telegram.WebApp.expand();
+</script>
+```
+
+### 12.13 Unify Nexus Deployment
+
+Sistema de despliegue unificado para Nexus.
+
+| Fase | Descripción |
+|------|-------------|
+| **Build** | Compilación de artefactos |
+| **Test** | Pruebas automatizadas |
+| **Deploy** | Despliegue a producción |
+| **Monitor** | Monitoreo continuo |
+
+---
+
+## 13. REPOSITORIOS ADICIONALES CONSOLIDADOS
+
+```
+tamv-nexus-core              → Núcleo del sistema Nexus
+Thanubis-Userbot             → Automatización Telegram
+sovereign-union              → Unión de entidades soberanas
+alamexa-design-system       → Sistema de diseño unificado
+Anubisgram                   → Plataforma social.instagram-like
+RSSHub                       → Agregador de feeds
+omniverse-hub               → Integración NVIDIA Omniverse
+federacion-tamv             → Sistema de federación
+access-academy              → Plataforma educativa
+web-4.0-genesis             → Implementación Web 4.0
+proyecto-central             → Proyecto central
+tamvweb                      → Portal web TAMV
+metaverso-latino-tamv-online→ Metaverso Latinoamérica
+tamv-nexus-c449e2b2         → Variante Nexus
+tamv-civilized              → TAMV civilizado
+tamv-orchestrator           → Orquestador de servicios
+tamv-universe-online        → Universo online
+ragbot-starter              → Starter RAG Bot
+tamvonline                   → TAMV Online
+dream-weaver                 → Creador de sueños
+unify-nexus-deployment      → Despliegue Nexus
+tamv-nexus-verse            → Verso Nexus
+twa-template                 → Template TWA
+minter-contract             → Contrato NFT
+conda                        → Gestión de entornos
+telegram-reverse-shell-lib  → Lib reverse shell
+```
+
+---
+
+## 14. ROADMAP DE EVOLUCIÓN
+
+### 14.1 Fases de Desarrollo
 
 | Fase | Período | Entregables |
 |------|---------|-------------|
@@ -480,13 +757,13 @@ tamv-core/
 | **Federation** | Q3 2027 | Multi-nodo, trust mesh |
 | **Intelligence** | Q4 2027 | Isabella integrada, evolución |
 
-### 11.2 Visión a Futuro
+### 14.2 Visión a Futuro
 
 > **TAMV MD-X4 trascenderá su fundador.** La gobernanza federada, la documentación exhaustiva y los principios del Códice aseguran que este sistema civilizatorio operará como infraestructura pública, no como empresa personal.
 
 ---
 
-## 12. GLOSARIO UNIFICADO
+## 14. GLOSARIO UNIFICADO
 
 | Término | Definición |
 |---------|------------|
@@ -519,7 +796,9 @@ tamv-core/
 | Módulos Educativos | 4 | ✅ Consolidados |
 | Realms | 6 | ✅ Consolidados |
 | Documentación | 8 | ✅ Consolidados |
-| **Total** | **30** | **100% Unificado** |
+| Módulos Avanzados | 8 | ✅ Consolidados |
+| Integraciones Externas | 14 | ✅ Consolidados |
+| **Total** | **58** | **100% Unificado** |
 
 ---
 
@@ -549,8 +828,8 @@ Este proyecto está licenciado bajo los términos del **Códice Maestro TAMV**.
 ---
 
 **Documento Unificado**: 2026-03-01  
-**Versión**: 1.0.0-UNIFIED  
+**Versión**: 2.0.0-UNIFIED-EXPANDED  
 **Autores**: Ecosistema TAMV + The Character Architect v2.5  
-**Repositorio Principal**: TAMV-ONLINE-NEXTGEN-1.0  
+**Repositorio Principal**: TAMV-ONLINE-NEXUS-CORE  
 
-*Este documento consolida toda la información, documentación, visión, conceptualización y funcionamiento técnico-operativo de los 30 repositorios del ecosistema TAMV.*
+*Este documento consolida toda la información, documentación, visión, conceptualización y funcionamiento técnico-operativo de los 58 repositorios del ecosistema TAMV (30 anteriores + 28 nuevos).*
