@@ -61,6 +61,43 @@
 
 ## 4. DOMINIOS DEL ECOSISTEMA
 
+### 4.1 Intro Cinematográfico
+
+El **Intro Cinematográfico** es la experiencia de entrada al ecosistema TAMV, una animación inmersiva que presenta la visión y valores del proyecto.
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                INTRO CINEMATOGRÁFICO TAMV                  │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│   Fase 1: Logo                                             │
+│   - Animación del símbolo TAMV                              │
+│   - Transición hacia la visión                              │
+│                                                             │
+│   Fase 2: Visión                                           │
+│   - Cita de Anubis Villaseñor                              │
+│   - Mensaje de soberanía digital                           │
+│                                                             │
+│   Fase 3: Características                                  │
+│   - Identidad Soberana                                     │
+│   - Metaverso Inmersivo                                    │
+│   - Economía Ética                                         │
+│   - IA Asistencial                                         │
+│                                                             │
+│   Fase 4: Cierre                                           │
+│   - Presentación MD-X4                                     │
+│   - Transición al dashboard                                │
+│                                                             │
+│   Control:                                                  │
+│   - Botón Skip para omitir                                 │
+│   - Barra de progreso                                      │
+│   - Solo primera vez (localStorage)                         │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### 4.2 Componente CinematicIntro
+
 ### 4.1 Dominios Principales (Implementados)
 
 | Dominio | Descripción | Estado |
