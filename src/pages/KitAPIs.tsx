@@ -181,6 +181,46 @@ const KitAPIs = () => (
         ))}
       </div>
     </Section>
+
+    <Section title="Ejemplos de uso">
+      <div className="rounded-lg border border-border/50 bg-muted/20 p-4 font-mono text-xs text-muted-foreground space-y-2 mb-4">
+        <div className="text-primary"># Ejemplo de uso con TypeScript SDK</div>
+        <div>import { apiClient } from '@tamv/sdk';</div>
+        <div></div>
+        <div>// Configurar cliente</div>
+        <div>apiClient.configure({</div>
+        <div>  apiKey: 'tu-api-key',</div>
+        <div>  nodeId: 'tu-node-id',</div>
+        <div>});</div>
+        <div></div>
+        <div>// Crear identidad</div>
+        <div>const identity = await apiClient.identity.create({</div>
+        <div>  sovereigntyLevel: 'INDIVIDUAL',</div>
+        <div>  metadata: {</div>
+        <div>    name: 'John Doe',</div>
+        <div>    email: 'john@example.com',</div>
+        <div>  },</div>
+        <div>  nodeId: 'node-123',</div>
+        <div>});</div>
+        <div></div>
+        <div>console.log('Identidad creada:', identity.did);</div>
+      </div>
+
+      <div className="rounded-lg border border-border/50 bg-muted/20 p-4 font-mono text-xs text-muted-foreground space-y-2">
+        <div className="text-primary"># Ejemplo de uso con Python SDK</div>
+        <div>from tamv_sdk import ApiClient</div>
+        <div></div>
+        <div># Configurar cliente</div>
+        <div>client = ApiClient({</div>
+        <div>    'api_key': 'tu-api-key',</div>
+        <div>    'node_id': 'tu-node-id',</div>
+        <div>})</div>
+        <div></div>
+        <div># Obtener progreso de estudiante</div>
+        <div>progress = client.education.get_progress('student-456')</div>
+        <div>print(f'Progreso: {progress.completion_rate}%')</div>
+      </div>
+    </Section>
   </WikiPage>
 );
 

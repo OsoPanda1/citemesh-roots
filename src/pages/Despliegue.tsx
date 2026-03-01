@@ -91,19 +91,19 @@ const Despliegue = () => (
 
           <div className="rounded-lg border border-border/50 bg-muted/20 p-4 font-mono text-xs text-muted-foreground space-y-1">
             <div className="text-primary"># 1. Clonar repositorio</div>
-            <div>git clone https://github.com/OsoPanda1/tamv-ecosystem</div>
-            <div>cd tamv-ecosystem</div>
+            <div>git clone https://github.com/OsoPanda1/citemesh-roots</div>
+            <div>cd citemesh-roots</div>
             <div className="mt-2 text-primary"># 2. Configurar variables de entorno</div>
-            <div>cp .env.example .env.local</div>
-            <div>nano .env.local</div>
-            <div className="mt-2 text-primary"># 3. Levantar servicios</div>
-            <div>docker compose up -d</div>
-            <div className="mt-2 text-primary"># 4. Verificar</div>
-            <div>docker compose ps</div>
-            <div>curl http://localhost:3000/health</div>
-            <div className="mt-2 text-primary"># 5. Acceder al dashboard</div>
-            <div>open http://localhost:3000  # API</div>
-            <div>open http://localhost:3001  # Grafana</div>
+            <div>cp .env.example .env</div>
+            <div>nano .env  # Editar con tus credenciales</div>
+            <div className="mt-2 text-primary"># 3. Instalar dependencias</div>
+            <div>npm install</div>
+            <div className="mt-2 text-primary"># 4. Iniciar base de datos</div>
+            <div>npx prisma migrate dev</div>
+            <div className="mt-2 text-primary"># 5. Levantar servidor de desarrollo</div>
+            <div>npm run dev</div>
+            <div className="mt-2 text-primary"># 6. Acceder al dashboard</div>
+            <div>open http://localhost:8080  # Aplicación web</div>
           </div>
         </Section>
       </TabsContent>
@@ -173,16 +173,17 @@ const Despliegue = () => (
           </p>
           <div className="rounded-lg border border-border/50 bg-muted/20 p-4 font-mono text-xs text-muted-foreground space-y-1 mb-4">
             <div className="text-primary"># 1. Clonar repositorio</div>
-            <div>git clone https://github.com/OsoPanda1/tamv-ecosystem</div>
+            <div>git clone https://github.com/OsoPanda1/citemesh-roots</div>
+            <div>cd citemesh-roots</div>
             <div className="mt-2 text-primary"># 2. Configurar variables de entorno</div>
-            <div>cp .env.example .env.local</div>
-            <div>nano .env.local  # Editar credenciales</div>
+            <div>cp .env.example .env</div>
+            <div>nano .env  # Editar credenciales</div>
             <div className="mt-2 text-primary"># 3. Levantar con Docker Compose</div>
-            <div>docker compose -f docker-compose.prod.yml up -d</div>
+            <div>docker compose up -d</div>
             <div className="mt-2 text-primary"># 4. Ejecutar migraciones</div>
-            <div>docker exec tamv-db psql -U tamv -f /migrations/init.sql</div>
+            <div>npx prisma migrate dev</div>
             <div className="mt-2 text-primary"># 5. Verificar servicios</div>
-            <div>curl -s https://localhost/health | jq .</div>
+            <div>curl -s http://localhost:8080/health | jq .</div>
           </div>
 
           <div className="space-y-3">
