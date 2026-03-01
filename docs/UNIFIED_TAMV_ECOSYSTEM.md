@@ -12,17 +12,19 @@
 1. [Visión Unificada](#1-visión-unificada)
 2. [Historia y Genesis](#2-historia-y-genesis)
 3. [Arquitectura Civilizatoria Federada](#3-arquitectura-civilizatoria-federada)
-4. [Componentes del Ecosistema](#4-componentes-del-ecosistema)
-5. [Dimensiones y Realms](#5-dimensiones-y-realms)
-6. [Sistema de Identidad Soberana](#6-sistema-de-identidad-soberana)
-7. [Economía y TAU Coin](#7-economía-y-tau-coin)
-8. [Inteligencia Artificial: Isabella](#8-inteligencia-artificial-isabella)
-9. [Infraestructura Técnica](#9-infraestructura-técnica)
-10. [Gobernanza y Códice](#10-gobernanza-y-códice)
-11. [Módulos Avanzados](#11-módulos-avanzados)
-12. [Integraciones Externas](#12-integraciones-externas)
-13. [ roadmap de Evolución](#13-roadmap-de-evolución)
-14. [Glosario Unificado](#14-glosario-unificado)
+4. [Dominios del Ecosistema](#4-dominios-del-ecosistema)
+5. [Sistema de Identidad Soberana](#5-sistema-de-identidad-soberana)
+6. [Social Core - Red Social](#6-social-core---red-social)
+7. [IA y Agentes](#7-ia-y-agentes)
+8. [Sistemas Avanzados](#8-sistemas-avanzados)
+9. [Economía y TAU Coin](#9-economía-y-tau-coin)
+10. [Infraestructura Técnica](#10-infraestructura-técnica)
+11. [Gobernanza y Membresías](#11-gobernanza-y-membresías)
+12. [Ontología Prisma](#12-ontología-prisma)
+13. [Módulos Avanzados](#13-módulos-avanzados)
+14. [Integraciones Externas](#14-integraciones-externas)
+15. [ roadmap de Evolución](#15-roadmap-de-evolución)
+16. [Glosario Unificado](#16-glosario-unificado)
 
 ---
 
@@ -43,6 +45,7 @@
 | **Resiliencia Civilizatoria** | Persistencia más allá de componentes individuales |
 | **Evolución > Estática** | Integración de mejoras sin degradar |
 | **Soberanía Digital** | Control absoluto sobre infraestructura |
+| **Transparencia Radical** | Todo auditable y explicable |
 
 ### 1.3 Objetivos Estratégicos
 
@@ -53,6 +56,259 @@
 5. **Infraestructura Soberana**: Control total sobre tecnología
 6. **Interoperabilidad**: Conexión con sistemas externos
 7. **Educación Accesible**: Academy para todos
+
+---
+
+## 4. DOMINIOS DEL ECOSISTEMA
+
+### 4.1 Dominios Principales (Implementados)
+
+| Dominio | Descripción | Estado |
+|---------|-------------|--------|
+| **ID-NVIDA** | Identidad civilizatoria soberana | ✅ Activo |
+| **UTAMV** | Universidad inmersiva y transformadora | ✅ Activo |
+| **Metaverso MD-X4** | Espacios XR y gemelos digitales | ✅ Activo |
+| **Economía TAMV** | Intercambio ético y trazable | ✅ Activo |
+| **Seguridad** | ANUBIS, HORUS, TENOCHTITLAN | ✅ Activo |
+| **Isabella AI** | IA contextual y colaborativa | ✅ Activo |
+
+### 4.2 Detalle de Dominios
+
+#### ID-NVIDA (Identidad Soberana)
+- Sistema de identidad digital descentralizada
+- Verificación de identidades humanas y de IA
+- Control total del usuario sobre sus datos
+- Portabilidad entre nodos de la federación
+
+#### UTAMV (Universidad TAMV)
+- Educación inmersiva y transformadora
+- Certificaciones verificables
+- Mentoría con IA y tutores humanos
+- Laboratorios virtuales prácticos
+
+#### Metaverso MD-X4
+- Espacios de realidad extendida (XR)
+- Gemelos digitales
+- Experiencias inmersivas
+- DreamSpaces (espacios oníricos)
+
+#### Economía TAMV
+- TAU Coin (criptomoneda dotacional)
+- Transacciones éticas y trazables
+- Incubadora de proyectos
+- Sistema económico antifrágil
+
+#### Seguridad
+- **ANUBIS**: Protección y vigilancia
+- **HORUS**: Monitoreo y auditoría
+- **TENOCHTITLAN**: Defensa perimetral
+
+---
+
+## 6. SOCIAL CORE - RED SOCIAL
+
+### 6.1 Visión General
+
+El **Social Core** es la capa que modela las relaciones entre identidades, comunidades y nodos dentro del ecosistema TAMV. Es donde se aplica reputación, participación, penalizaciones y reconocimiento como mecanismos de gobernanza social.
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    SOCIAL CORE                              │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│   ┌─────────────┐  ┌─────────────┐  ┌─────────────┐       │
+│   │  Persona    │  │ Comunidad   │  │    Nodo     │       │
+│   │  (Perfil)   │  │  (Grupo)    │  │ (Federado)  │       │
+│   └─────────────┘  └─────────────┘  └─────────────┘       │
+│                                                             │
+│   ┌─────────────────────────────────────────────────────┐  │
+│   │         Sistema de Relaciones                        │  │
+│   │  - Reputación (Trust Score)                         │  │
+│   │  - Gobernanza (Votos y Propuestas)                  │  │
+│   │  - Reconocimiento (Badges y Certificaciones)        │  │
+│   │  - Penalizaciones (Sistema de Sanciones)            │  │
+│   └─────────────────────────────────────────────────────┘  │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### 6.2 Entidades del Social Core
+
+| Entidad | Descripción |
+|---------|-------------|
+| **Persona** | Identidad verificada vía ID-NVIDA con perfil social, historial de participación, reputación acumulada y badges |
+| **Comunidad** | Grupo de personas con intereses compartidos (temática, geográfica o funcional) |
+| **Nodo** | Instancia federada del ecosistema TAMV con reputación y gobernanza propia |
+| **Rol** | Función que una persona ejerce: guardián, moderador, contribuidor, observador |
+
+### 6.3 Sistema de Reputación
+
+- **Trust Score**: Basado en contribuciones, votos recibidos, tiempo activo y cumplimiento de compromisos
+- **Portabilidad**: La reputación es portable entre comunidades y nodos
+- **Verificación**: Scores verificables en blockchain
+
+### 6.4 Dinámicas Sociales
+
+| Mecanismo | Descripción |
+|-----------|-------------|
+| **Votaciones** | Decidir prioridades de desarrollo de un dominio |
+| **Propuestas** | Miembros Devs+ pueden proponer cambios formales |
+| **Badges** | Reconocimientos por hitos: 'Primera contribución', 'Guardián de dominio', etc. |
+| **Penalizaciones** | Advertencia → Restricción temporal → Suspensión → Expulsión |
+
+### 6.5 Acceso por Membresía
+
+| Nivel | Acceso Social |
+|-------|--------------|
+| **Free** | Voz en foros públicos (sin voto) |
+| **Premium** | Voz + participación limitada en encuestas |
+| **Devs** | Acceso completo a Social Core |
+| **Advance** | Acceso completo + configuración de nodos |
+| **Enterprise** | Gobernanza compartida + voto en decisiones críticas |
+
+---
+
+## 7. IA Y AGENTES
+
+### 7.1 Isabella Villaseñor AI™
+
+Isabella es la IA contextual y colaborativa del ecosistema TAMV. Actúa como orquestadora neural con propósito ético.
+
+| Capacidad | Descripción |
+|-----------|-------------|
+| **IA Contextual** | Comprensión del contexto civilizatorio y personal del usuario |
+| **Canal IA-IA** | Comunicación entre agentes para coordinación de tareas complejas |
+| **Onboarding Sensorial** | Proceso de integración que adapta la experiencia al perfil del usuario |
+| **Compliance Integrado** | Alineación con AI Act, GDPR, ISO y NOM como parte del código |
+
+### 7.2 Arquitectura de Agentes
+
+El ecosistema de agentes opera bajo un modelo jerárquico donde Isabella coordina agentes auxiliares especializados:
+
+| Agente | Dominio |
+|--------|---------|
+| **Agente UTAMV** | Educación y formación |
+| **Agente Seguridad (ANUBIS)** | Protección y detección de amenazas |
+| **Agente Economía (TAU)** | Gestión del sistema económico |
+| **Agente DreamSpaces** | Experiencias inmersivas y oníricas |
+
+---
+
+## 8. SISTEMAS AVANZADOS
+
+### 8.1 Pipelines Hexagonales
+
+Arquitectura de puertos y adaptadores con **doble pipeline**:
+
+| Pipeline | Descripción | Especificaciones |
+|----------|-------------|------------------|
+| **Pipeline Caliente A** | Stream de eventos en tiempo real, latencia < 50ms | Throughput: 50K evt/s |
+| **Pipeline Caliente B** | Redundancia hot-standby con failover automático | Failover: < 200ms |
+| **Pipeline Frío A** | Procesamiento batch nocturno, archivado | Batch window: 6h |
+| **Pipeline Frío B** | Análisis retrospectivo y BI | Retención: 7 años |
+
+### 8.2 EOCT (Evolutionary Organizational Cybernetic Technology)
+
+Framework de gobernanza computacional que combina teoría cibernética con blockchain:
+
+| Capa | Nombre | Función |
+|------|--------|---------|
+| **L1** | Operación | Gestión autónoma de nodos individuales |
+| **L2** | Coordinación | Sincronización horizontal entre nodos |
+| **L3** | Control | Supervisión de dominios, monitoreo de SLAs |
+| **L4** | Inteligencia | Análisis predictivo inter-dominio (Isabella AI) |
+
+### 8.3 Sistema Quantum Resiliente
+
+Arquitectura diseñada para resistir amenazas de computación cuántica futura:
+
+- **Criptografía post-cuántica**: CRYSTALS-Kyber, CRYSTALS-Dilithium
+- **QKD-inspired key exchange**: Protocolo de intercambio de claves seguro
+- **Consenso quantum-safe**: Mantiene seguridad BFT ante adversarios cuánticos
+- **Entrelazamiento lógico**: Propagación de verificaciones criptográficas
+
+### 8.4 Filtración Inteligente
+
+Sistema de clasificación, depuración y recomendación:
+
+1. **Pre-filtro**: Reglas estáticas eliminan spam y bots
+2. **Clasificación ML**: NLP categoriza por dominio, urgencia y tipo
+3. **Enriquecimiento**: Crossref con grafos de conocimiento TAMV
+4. **Scoring**: Asignación de trust-score y prioridad
+5. **Auditoría**: Registro inmutable de decisiones
+
+---
+
+## 11. GOBERNANZA Y MEMBRESÍAS
+
+### 11.1 Sistema de Roles
+
+| Rol | Descripción |
+|-----|-------------|
+| **Fundador / Guardián Supremo** | Anubis Villaseñor - Visión, arquitectura y decisiones finales |
+| **Colaboradores de Alta Confianza** | Validan y editan contenido crítico |
+| **Contribuidores Moderados** | Contribuciones abiertas mediante PRs |
+| **Dueños de Sección** | Garantizan precisión y vigencia del contenido |
+
+### 11.2 Niveles de Membresía
+
+| Nivel | Rol | Permisos |
+|-------|-----|----------|
+| **Free** | Observador civilizatorio | Acceso de lectura, voz en foros públicos |
+| **Premium** | Usuario avanzado | Acceso a dashboards, participación en encuestas |
+| **Devs** | Desarrollador TAMV | Proponer cambios técnicos, PRs en dominios |
+| **Advance** | Operador / Aliado institucional | Configurar nodos, proponer políticas |
+| **Enterprise** | Nodo federado | Voto en decisiones críticas, designar guardianes |
+
+### 11.3 Sistema de Certificación Federada
+
+| Nivel | Criterios |
+|-------|-----------|
+| **Nodo Observador** | Registro básico, cumplimiento mínimo |
+| **Nodo Colaborador** | Cumplimiento técnico parcial |
+| **Nodo Operador** | Uptime > 99.5%, auditoría aprobada |
+| **Nodo Guardián** | Máximo nivel, guardián designado |
+
+### 11.4 Compliance y Estándares
+
+- AI Act (EU)
+- GDPR
+- ISO 27001
+- ISO 42001
+- NOM-151
+- Zero-Trust
+- OWASP Top 10
+
+---
+
+## 12. ONTOLOGÍA PRISMA
+
+### 12.1 Entidades del Esquema
+
+El esquema Prisma define la ontología ejecutable del ecosistema:
+
+| Modelo | Descripción |
+|--------|-------------|
+| **CivilNode** | Nodos federados (ciudades, instituciones, clusters) |
+| **Identity** | Identidades soberanas (humanos, IA, organizaciones) |
+| **Domain** | Dominios funcionales (ID-NVIDA, UTAMV, Metaverso, etc.) |
+| **Contract** | Acuerdos socio-técnicos ejecutables |
+| **Artifact** | Código, notebooks, infraestructura, políticas |
+| **AutopoiesisLog** | Registro de evolución del sistema |
+| **Persona** | Perfiles sociales vinculados a identidades |
+| **DomainNode** | Relación muchos-a-muchos entre Dominios y Nodos |
+
+### 12.2 Enumeraciones Civilizatorias
+
+```
+NodeStatus: PROVISIONING, ACTIVE, SUSPENDED, DECOMMISSIONED, QUARANTINED
+CertificationLevel: LEVEL_0 a LEVEL_4
+IdentityStatus: PENDING, ACTIVE, REVOKED, RECOVERING, FROZEN
+SovereigntyLevel: INDIVIDUAL, COMMUNITY, INSTITUTIONAL, FEDERAL
+DomainCode: ID_NVIDA, UTAMV, METAVERSE, ECONOMY, SECURITY, GOVERNANCE, INFRASTRUCTURE, CULTURE
+ContractType: MEMBERSHIP, SERVICE_AGREEMENT, DATA_SHARING, RESOURCE_POOLING, GOVERNANCE, ECONOMIC, SECURITY
+ArtifactType: CODE, NOTEBOOK, INFRASTRUCTURE, DASHBOARD, POLICY, DOCUMENTATION, DATASET, MODEL
+```
 
 ---
 
@@ -793,12 +1049,15 @@ telegram-reverse-shell-lib  → Lib reverse shell
 | Categoría | Total Repos | Estado |
 |-----------|-------------|--------|
 | Nodos Principales | 8 | ✅ Consolidados |
+| Dominios del Ecosistema | 6 | ✅ Implementados |
 | Módulos Educativos | 4 | ✅ Consolidados |
 | Realms | 6 | ✅ Consolidados |
 | Documentación | 8 | ✅ Consolidados |
 | Módulos Avanzados | 8 | ✅ Consolidados |
 | Integraciones Externas | 14 | ✅ Consolidados |
-| **Total** | **58** | **100% Unificado** |
+| Entidades Social Core | 4 | ✅ Implementadas |
+| Agentes IA | 4 | ✅ Consolidados |
+| **Total** | **58+** | **100% Unificado** |
 
 ---
 
@@ -828,8 +1087,8 @@ Este proyecto está licenciado bajo los términos del **Códice Maestro TAMV**.
 ---
 
 **Documento Unificado**: 2026-03-01  
-**Versión**: 2.0.0-UNIFIED-EXPANDED  
+**Versión**: 3.0.0-UNIFIED-COMPREHENSIVE  
 **Autores**: Ecosistema TAMV + The Character Architect v2.5  
 **Repositorio Principal**: TAMV-ONLINE-NEXUS-CORE  
 
-*Este documento consolida toda la información, documentación, visión, conceptualización y funcionamiento técnico-operativo de los 58 repositorios del ecosistema TAMV (30 anteriores + 28 nuevos).*
+*Este documento consolida toda la información, documentación, visión, conceptualización y funcionamiento técnico-operativo del ecosistema TAMV, incluyendo código fuente existente (React, Prisma, Supabase), dominios implementados, Social Core, IA y sistemas avanzados.*
