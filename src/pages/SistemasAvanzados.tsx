@@ -1,12 +1,12 @@
 import { WikiPage } from "@/components/WikiPage";
 import { Section, InfoCard } from "@/components/WikiElements";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Hexagon, Cpu, Atom, Activity, Filter, Layers, Zap, Shield, Database, GitBranch } from "lucide-react";
+import { Hexagon, Cpu, Atom, Activity, Filter, Layers, Zap, Shield, Database, GitBranch, Users, Heart, Vote, Star } from "lucide-react";
 
 const SistemasAvanzados = () => (
   <WikiPage
     title="Sistemas Avanzados"
-    subtitle="Pipelines hexagonales, EOCT, quantum, monitoreo y filtración inteligente"
+    subtitle="Pipelines hexagonales, EOCT, quantum, monitoreo, filtración y Social Core"
   >
     <Tabs defaultValue="hexagonal" className="w-full">
       <TabsList className="w-full flex-wrap h-auto gap-1 bg-muted/30 p-1">
@@ -15,6 +15,7 @@ const SistemasAvanzados = () => (
         <TabsTrigger value="quantum" className="text-xs">Quantum</TabsTrigger>
         <TabsTrigger value="monitoreo" className="text-xs">Monitoreo</TabsTrigger>
         <TabsTrigger value="filtracion" className="text-xs">Filtración</TabsTrigger>
+        <TabsTrigger value="socialcore" className="text-xs">Social Core</TabsTrigger>
       </TabsList>
 
       {/* HEXAGONAL PIPELINES */}
@@ -231,6 +232,80 @@ const SistemasAvanzados = () => (
               </div>
             ))}
           </div>
+        </Section>
+      </TabsContent>
+
+      {/* SOCIAL CORE */}
+      <TabsContent value="socialcore" className="space-y-6 mt-6">
+        <Section title="Módulo Social Core">
+          <p className="text-muted-foreground leading-relaxed">
+            El <strong className="text-primary">Social Core</strong> es la capa que modela las relaciones entre
+            identidades, comunidades y nodos dentro del ecosistema TAMV. Es donde se aplica reputación,
+            participación, penalizaciones y reconocimiento como mecanismos de gobernanza social.
+          </p>
+          <div className="rounded-lg border border-primary/20 bg-primary/5 p-4 mt-3">
+            <p className="text-sm text-muted-foreground">
+              <strong className="text-primary">Acceso por membresía:</strong> Devs, Advance y Enterprise tienen acceso
+              a Social Core. Los usuarios Free y Premium tienen voz (sin voto) en foros públicos.
+            </p>
+          </div>
+        </Section>
+
+        <Section title="Entidades conceptuales">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <InfoCard icon={Users} title="Persona" description="Identidad verificada vía ID-NVIDA con perfil social, historial de participación, reputación acumulada y badges." variant="gold" />
+            <InfoCard icon={Heart} title="Comunidad" description="Grupo de personas con intereses compartidos. Puede ser temática (dominio), geográfica (nodo) o funcional (proyecto)." variant="cyan" />
+            <InfoCard icon={Hexagon} title="Nodo" description="Instancia federada del ecosistema TAMV. El nodo es también una entidad social con reputación y gobernanza propia." variant="gold" />
+            <InfoCard icon={Shield} title="Rol" description="Función que una persona ejerce dentro de una comunidad o nodo: guardián, moderador, contribuidor, observador." variant="cyan" />
+          </div>
+        </Section>
+
+        <Section title="Relaciones y dinámicas">
+          <div className="space-y-3">
+            {[
+              { icon: Star, title: "Reputación", desc: "Sistema de trust-score basado en contribuciones, votos recibidos, tiempo activo y cumplimiento de compromisos. La reputación es portable entre comunidades y nodos." },
+              { icon: Vote, title: "Participación en gobernanza", desc: "Votaciones, propuestas y encuestas. Cada nivel de membresía tiene diferente peso de voto. Las decisiones se registran en el ledger EOCT." },
+              { icon: Heart, title: "Reconocimiento", desc: "Badges, certificaciones y títulos otorgados por contribuciones significativas. Los reconocimientos son verificables en blockchain." },
+              { icon: Shield, title: "Penalizaciones", desc: "Sistema de sanciones graduales por violación del Códice Maestro: advertencia → restricción temporal → suspensión → expulsión. Apelable ante el consejo de guardianes." },
+            ].map((r) => (
+              <div key={r.title} className="rounded-lg border border-border/50 bg-card/50 p-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <r.icon className="h-4 w-4 text-primary shrink-0" />
+                  <h4 className="font-semibold text-foreground text-sm">{r.title}</h4>
+                </div>
+                <p className="text-xs text-muted-foreground pl-6">{r.desc}</p>
+              </div>
+            ))}
+          </div>
+        </Section>
+
+        <Section title="Casos de uso del Social Core">
+          <div className="space-y-2">
+            {[
+              "Votaciones comunitarias: decidir prioridades de desarrollo de un dominio",
+              "Propuestas de mejora: cualquier miembro Devs+ puede proponer cambios formales",
+              "Reputación por contribución: desarrolladores acumulan trust-score con PRs aprobados",
+              "Gobernanza de nodo: los miembros Enterprise eligen representantes para el consejo federado",
+              "Moderación distribuida: la comunidad reporta y los guardianes resuelven conflictos",
+              "Reconocimiento público: badges por hitos como 'Primera contribución', 'Guardián de dominio', '1000 commits'",
+            ].map((useCase, i) => (
+              <div key={i} className="flex items-start gap-3">
+                <span className="w-6 h-6 rounded-full bg-primary/10 text-primary text-xs font-bold flex items-center justify-center shrink-0">{i + 1}</span>
+                <span className="text-sm text-muted-foreground">{useCase}</span>
+              </div>
+            ))}
+          </div>
+        </Section>
+
+        <Section title="Estado del módulo">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-yellow-500/30 bg-yellow-500/5">
+            <span className="w-2 h-2 rounded-full bg-yellow-500 animate-pulse" />
+            <span className="text-sm text-yellow-500 font-medium">En progreso — Diseño conceptual completado, implementación pendiente</span>
+          </div>
+          <p className="text-xs text-muted-foreground mt-3">
+            La implementación completa del Social Core incluirá: tabla de comunidades con RLS por membresía,
+            sincronización en tiempo real de actividad social, y sistema de reputación con scoring on-chain.
+          </p>
         </Section>
       </TabsContent>
     </Tabs>

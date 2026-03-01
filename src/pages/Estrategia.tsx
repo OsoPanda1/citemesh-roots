@@ -1,6 +1,6 @@
 import { WikiPage } from "@/components/WikiPage";
 import { Section } from "@/components/WikiElements";
-import { Target, Users, Rocket, Shield, Award, TrendingUp } from "lucide-react";
+import { Target, Users, Rocket, Shield, Award, TrendingUp, ArrowRight } from "lucide-react";
 
 const Estrategia = () => (
   <WikiPage
@@ -29,27 +29,9 @@ const Estrategia = () => (
       <Section title="Segmentos de público">
         <div className="space-y-4">
           {[
-            {
-              icon: Shield,
-              segment: "Gobiernos y comunidades",
-              need: "Soberanía digital",
-              offer: "Identidad ciudadana, servicios descentralizados, transparencia con EOCT.",
-              hook: "¿Tu gobierno depende de infraestructura extranjera para servicios digitales críticos?",
-            },
-            {
-              icon: Users,
-              segment: "Universidades y centros educativos",
-              need: "Experiencias inmersivas",
-              offer: "Campus virtual con UTAMV, certificaciones blockchain, tutora IA personalizada.",
-              hook: "¿Tus estudiantes merecen más que un PDF y un Zoom?",
-            },
-            {
-              icon: Rocket,
-              segment: "Empresas éticas y B-Corps",
-              need: "Ecosistemas antifrágiles",
-              offer: "Gobernanza ética, compliance integrado, seguridad cuántico-resiliente.",
-              hook: "¿Tu empresa habla de ética digital o la implementa desde la arquitectura?",
-            },
+            { icon: Shield, segment: "Gobiernos y comunidades", need: "Soberanía digital", offer: "Identidad ciudadana, servicios descentralizados, transparencia con EOCT.", hook: "¿Tu gobierno depende de infraestructura extranjera para servicios digitales críticos?" },
+            { icon: Users, segment: "Universidades y centros educativos", need: "Experiencias inmersivas", offer: "Campus virtual con UTAMV, certificaciones blockchain, tutora IA personalizada.", hook: "¿Tus estudiantes merecen más que un PDF y un Zoom?" },
+            { icon: Rocket, segment: "Empresas éticas y B-Corps", need: "Ecosistemas antifrágiles", offer: "Gobernanza ética, compliance integrado, seguridad cuántico-resiliente.", hook: "¿Tu empresa habla de ética digital o la implementa desde la arquitectura?" },
           ].map((s) => (
             <div key={s.segment} className="rounded-lg border border-border/50 bg-card/50 p-5">
               <div className="flex items-center gap-2 mb-3">
@@ -66,24 +48,42 @@ const Estrategia = () => (
         </div>
       </Section>
 
+      <Section title="Segmentación de clientes y rutas de adopción">
+        <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+          El ecosistema TAMV contempla rutas progresivas de adopción alineadas con los niveles de membresía.
+          Cada ruta está diseñada para acompañar al usuario desde la exploración hasta la operación autónoma.
+        </p>
+        <div className="space-y-3">
+          {[
+            { route: "Ruta Individual", path: "Free → Premium → Devs", desc: "Ciudadanos y profesionales que exploran, consumen contenido avanzado y eventualmente construyen sobre la plataforma." },
+            { route: "Ruta Institucional", path: "Premium → Advance → Enterprise", desc: "Universidades y organizaciones que inician con evaluación, lanzan pilotos y escalan a despliegues federados." },
+            { route: "Ruta Soberana", path: "Advance → Enterprise (contrato directo)", desc: "Gobiernos y grandes empresas que requieren infraestructura dedicada, SLA y nodos federados propios desde el inicio." },
+          ].map((r) => (
+            <div key={r.route} className="rounded-lg border border-border/50 bg-card/50 p-4">
+              <div className="flex items-center gap-2 mb-1">
+                <ArrowRight className="h-4 w-4 text-primary shrink-0" />
+                <h4 className="font-semibold text-foreground text-sm">{r.route}</h4>
+                <span className="text-xs text-primary font-mono ml-auto">{r.path}</span>
+              </div>
+              <p className="text-xs text-muted-foreground pl-6">{r.desc}</p>
+            </div>
+          ))}
+        </div>
+        <div className="rounded-lg border border-primary/20 bg-primary/5 p-4 mt-4">
+          <p className="text-sm text-muted-foreground">
+            <strong className="text-primary">Nota estratégica:</strong> TAMV no compite con el Estado ni con empresas,
+            sino que <strong className="text-foreground">complementa infraestructura existente</strong>. La propuesta es
+            ofrecer la capa civilizatoria que falta: identidad soberana, gobernanza ética y resiliencia antifrágil.
+          </p>
+        </div>
+      </Section>
+
       <Section title="Propuesta de valor">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {[
-            {
-              icon: Rocket,
-              title: "Plantilla modular",
-              points: ["Documentación técnica completa", "Narrativa cultural integrada", "Despliegue en < 72 horas", "Personalización por dominio"],
-            },
-            {
-              icon: Award,
-              title: "Certificación federada",
-              points: ["Validación oficial de réplica", "Auditoría de seguridad incluida", "Compliance GDPR + AI Act", "Renovación anual automatizada"],
-            },
-            {
-              icon: TrendingUp,
-              title: "Ecosistema integrado",
-              points: ["Isabella AI como asistente", "Economía ética con token TAU", "Identidad soberana ID-NVIDA", "Monitoreo Grafana/Terraform"],
-            },
+            { icon: Rocket, title: "Plantilla modular", points: ["Documentación técnica completa", "Narrativa cultural integrada", "Despliegue en < 72 horas", "Personalización por dominio"] },
+            { icon: Award, title: "Certificación federada", points: ["Validación oficial de réplica", "Auditoría de seguridad incluida", "Compliance GDPR + AI Act", "Renovación anual automatizada"] },
+            { icon: TrendingUp, title: "Ecosistema integrado", points: ["Isabella AI como asistente", "Economía ética con token TAU", "Identidad soberana ID-NVIDA", "Monitoreo Grafana/Terraform"] },
           ].map((prop) => (
             <div key={prop.title} className="rounded-lg border border-border/50 bg-card/50 p-4">
               <div className="flex items-center gap-2 mb-3">
@@ -103,13 +103,14 @@ const Estrategia = () => (
         </div>
       </Section>
 
-      <Section title="Modelo de negocio">
+      <Section title="Modelo de negocio por membresía">
         <div className="space-y-3">
           {[
-            { tier: "Community (Gratis)", desc: "Código open source, documentación completa, soporte comunitario. Ideal para evaluación y proyectos personales." },
-            { tier: "Professional", desc: "Certificación federada, soporte prioritario, actualizaciones de seguridad aceleradas, acceso a módulos premium." },
-            { tier: "Enterprise", desc: "Despliegue asistido, SLA 99.9%, consultoría de arquitectura, personalización de módulos, formación on-site." },
-            { tier: "Sovereign", desc: "Infraestructura dedicada, auditoría de seguridad trimestral, línea directa con equipo core, co-desarrollo de features." },
+            { tier: "Free (0 MXN/mes)", desc: "Puerta de entrada educativa. Lectura de wiki, Isabella básica, casos de uso públicos. Ideal para exploradores y estudiantes." },
+            { tier: "Premium (~7–15 USD/mes)", desc: "Dashboards básicos, contenidos ampliados, módulos introductorios de UTAMV. Para profesionales individuales y microempresas." },
+            { tier: "Devs (~25–50 USD/mes)", desc: "Kit APIs con sandbox, documentación avanzada, acceso a NOA‑TAMV en lectura, Social Core. Para desarrolladores y equipos técnicos." },
+            { tier: "Advance (~250–500 USD/mes)", desc: "Monitoreo avanzado, integración con NOA y Social Core, configuración de nodos, soporte prioritario. Para instituciones medianas." },
+            { tier: "Enterprise (contrato anual)", desc: "Ecosistemas multi-nodo, despliegues federados llave en mano, gobernanza compartida, SLA dedicado. Para gobiernos y grandes empresas." },
           ].map((t) => (
             <div key={t.tier} className="rounded-lg border border-border/50 bg-card/50 p-4 flex items-start gap-3">
               <Award className="h-4 w-4 text-primary mt-0.5 shrink-0" />

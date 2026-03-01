@@ -1,5 +1,6 @@
 import { WikiPage } from "@/components/WikiPage";
 import { Section } from "@/components/WikiElements";
+import { Users, Code, Building, Globe } from "lucide-react";
 
 const Introduccion = () => (
   <WikiPage
@@ -13,6 +14,29 @@ const Introduccion = () => (
         infraestructura auditable. Se plantea como el primer <strong className="text-primary">CITEMESH</strong>: un metaverso
         civilizatorio diseñado para servir a las personas y no a la publicidad ni a la vigilancia masiva.
       </p>
+    </Section>
+
+    <Section title="¿Quién puede usar TAMV MD‑X4?">
+      <p className="text-muted-foreground leading-relaxed mb-4">
+        TAMV está diseñado como plantilla replicable para múltiples segmentos. Cada uno accede al ecosistema
+        según su nivel de membresía (ver <strong className="text-primary">Economía TAMV</strong> para detalles completos).
+      </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+        {[
+          { icon: Users, segment: "Ciudadanos y estudiantes", desc: "Acceso libre (Free) para explorar la wiki, usar Isabella AI y aprender sobre soberanía digital." },
+          { icon: Code, segment: "Desarrolladores y labs", desc: "Nivel Devs con sandbox técnico, Kit de APIs completo y documentación avanzada para construir sobre TAMV." },
+          { icon: Building, segment: "Instituciones y universidades", desc: "Nivel Advance con monitoreo avanzado, configuración de nodos y soporte prioritario para pilotos institucionales." },
+          { icon: Globe, segment: "Gobiernos y grandes empresas", desc: "Nivel Enterprise con despliegues federados llave en mano, SLA dedicado y gobernanza compartida." },
+        ].map((s) => (
+          <div key={s.segment} className="rounded-lg border border-border/50 bg-card/60 p-4">
+            <div className="flex items-center gap-2 mb-2">
+              <s.icon className="h-4 w-4 text-primary" />
+              <h4 className="font-semibold text-foreground text-sm">{s.segment}</h4>
+            </div>
+            <p className="text-xs text-muted-foreground">{s.desc}</p>
+          </div>
+        ))}
+      </div>
     </Section>
 
     <Section title="Origen e historia">

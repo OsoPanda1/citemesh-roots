@@ -1,7 +1,7 @@
 import { WikiPage } from "@/components/WikiPage";
 import { Section } from "@/components/WikiElements";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { BookOpen, Users, Shield, Code, Rocket, HelpCircle } from "lucide-react";
+import { BookOpen, Users, Shield, Code, Rocket, HelpCircle, Crown, Building } from "lucide-react";
 
 const Manuales = () => (
   <WikiPage
@@ -12,6 +12,8 @@ const Manuales = () => (
       <TabsList className="w-full flex-wrap h-auto gap-1 bg-muted/30 p-1">
         <TabsTrigger value="inicio" className="text-xs">Inicio rápido</TabsTrigger>
         <TabsTrigger value="roles" className="text-xs">Por rol</TabsTrigger>
+        <TabsTrigger value="membresias" className="text-xs">Por membresía</TabsTrigger>
+        <TabsTrigger value="instituciones" className="text-xs">Instituciones</TabsTrigger>
         <TabsTrigger value="seguridad" className="text-xs">Seguridad</TabsTrigger>
         <TabsTrigger value="desarrollo" className="text-xs">Desarrollo</TabsTrigger>
         <TabsTrigger value="redundancia" className="text-xs">Redundancia</TabsTrigger>
@@ -68,6 +70,115 @@ const Manuales = () => (
               </ul>
             </div>
           ))}
+        </Section>
+      </TabsContent>
+
+      <TabsContent value="membresias" className="space-y-6 mt-6">
+        <Section title="Guía por nivel de membresía">
+          <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+            Cada nivel de membresía tiene acceso a diferentes funcionalidades. Aquí te explicamos qué puedes hacer
+            según tu plan y las rutas recomendadas para aprovechar al máximo el ecosistema.
+          </p>
+          {[
+            {
+              level: "Soy usuario Free", icon: Users,
+              canDo: ["Leer toda la wiki y documentación pública", "Usar Isabella AI para preguntas básicas", "Explorar casos de uso públicos", "Participar con voz (sin voto) en Social Core"],
+              route: "Empieza por Introducción → Arquitectura → Dominios. Usa Isabella AI para resolver dudas. Si te interesa construir, considera el plan Devs.",
+            },
+            {
+              level: "Soy usuario Premium", icon: BookOpen,
+              canDo: ["Todo lo de Free más:", "Acceso a dashboards básicos (solo lectura)", "Contenidos ampliados y reportes introductorios", "Módulos introductorios de UTAMV", "Participación en encuestas del Social Core"],
+              route: "Explora el Dashboard de Monitoreo → Casos de Uso → Manuales de Seguridad. Ideal para evaluar antes de un piloto institucional.",
+            },
+            {
+              level: "Soy usuario Devs", icon: Code,
+              canDo: ["Todo lo de Premium más:", "Kit de APIs completo con sandbox técnico", "Documentación técnica avanzada y ejemplos NOA‑TAMV", "Acceso a NOA‑TAMV en lectura", "Participación en Social Core y propuestas de PRs técnicos"],
+              route: "Kit APIs → Sistemas Avanzados → Despliegue (entorno local). Contribuye con PRs en los dominios que te interesen.",
+            },
+            {
+              level: "Soy Advance (institución mediana)", icon: Building,
+              canDo: ["Todo lo de Devs más:", "Monitoreo avanzado con métricas por nodo propio", "Integración parcial con NOA y Social Core operativo", "Configuración y gestión de nodos propios", "Soporte técnico prioritario", "Participación en decisiones de despliegue federado"],
+              route: "Despliegue (cloud/federada) → Gobernanza → Certificación. Inicia un piloto y evalúa la viabilidad de escalar a Enterprise.",
+            },
+            {
+              level: "Soy Enterprise (gobierno / gran empresa)", icon: Crown,
+              canDo: ["Acceso total al ecosistema:", "Ecosistemas multi-nodo con despliegue llave en mano", "Gobernanza compartida y voto en decisiones críticas", "Integración completa con infraestructura propia", "SLA dedicado y soporte personalizado", "Designación de guardianes de nodo y certificación Guardián"],
+              route: "Contacto directo con el equipo core → Auditoría de infraestructura → Despliegue federado → Certificación como Nodo Guardián.",
+            },
+          ].map((m) => (
+            <div key={m.level} className="rounded-lg border border-border/50 bg-card/50 p-5 mb-4">
+              <div className="flex items-center gap-2 mb-3">
+                <m.icon className="h-5 w-5 text-primary" />
+                <h4 className="font-semibold text-foreground">{m.level}</h4>
+              </div>
+              <div className="space-y-3">
+                <div>
+                  <p className="text-xs font-medium text-foreground mb-1.5">¿Qué puedo hacer?</p>
+                  <ul className="space-y-1">
+                    {m.canDo.map((item) => (
+                      <li key={item} className="flex items-center gap-2 text-xs text-muted-foreground">
+                        <span className="w-1 h-1 rounded-full bg-primary shrink-0" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="rounded-md bg-primary/5 border border-primary/20 p-3">
+                  <p className="text-xs text-muted-foreground">
+                    <strong className="text-primary">Ruta recomendada:</strong> {m.route}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </Section>
+      </TabsContent>
+
+      <TabsContent value="instituciones" className="space-y-6 mt-6">
+        <Section title="Guía para instituciones (Advance / Enterprise)">
+          <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+            Guía para universidades, gobiernos y empresas que desean evaluar, pilotear o desplegar TAMV como infraestructura digital soberana.
+          </p>
+
+          <div className="space-y-4">
+            <div className="rounded-lg border border-border/50 bg-card/50 p-5">
+              <h4 className="font-semibold text-foreground mb-3">Fase 1: Evaluación</h4>
+              <ul className="space-y-1.5 text-sm text-muted-foreground">
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />Revisar Introducción, Arquitectura y Casos de Uso</li>
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />Consultar el Dashboard de Monitoreo para ver métricas operativas</li>
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />Usar Isabella AI para resolver dudas técnicas</li>
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />Revisar Estrategia Comercial para modelo de negocio y precios</li>
+              </ul>
+            </div>
+
+            <div className="rounded-lg border border-border/50 bg-card/50 p-5">
+              <h4 className="font-semibold text-foreground mb-3">Fase 2: Piloto (Advance)</h4>
+              <ul className="space-y-1.5 text-sm text-muted-foreground">
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-secondary shrink-0" />Contratar plan Advance (~250–500 USD/mes)</li>
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-secondary shrink-0" />Configurar nodo piloto con soporte prioritario</li>
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-secondary shrink-0" />Integrar módulos seleccionados (ej: UTAMV para educación)</li>
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-secondary shrink-0" />Evaluar resultados durante 3–6 meses</li>
+              </ul>
+            </div>
+
+            <div className="rounded-lg border border-border/50 bg-card/50 p-5">
+              <h4 className="font-semibold text-foreground mb-3">Fase 3: Escala (Enterprise)</h4>
+              <ul className="space-y-1.5 text-sm text-muted-foreground">
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />Migrar a contrato Enterprise anual con SLA</li>
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />Desplegar nodos federados dedicados</li>
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />Obtener certificación federada (Nodo Operador → Guardián)</li>
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />Participar en gobernanza compartida del ecosistema</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="rounded-lg border border-primary/20 bg-primary/5 p-4 mt-4">
+            <p className="text-sm text-muted-foreground">
+              <strong className="text-primary">¿Qué se espera de una institución?</strong> Compromiso con los principios
+              éticos del Códice Maestro, designación de un responsable técnico, participación activa en la comunidad
+              del ecosistema y transparencia en el uso de los módulos desplegados.
+            </p>
+          </div>
         </Section>
       </TabsContent>
 
@@ -138,7 +249,6 @@ const Manuales = () => (
           <p className="text-muted-foreground text-sm leading-relaxed mb-4">
             Para evitar dependencia crítica de un solo proveedor, TAMV mantiene un plan de redundancia multi-capa.
           </p>
-
           <div className="space-y-4">
             {[
               { layer: "Frontend", primary: "Lovable Cloud (Vite + React)", alternatives: ["Vercel", "Netlify", "Cloudflare Pages", "Self-hosted Nginx"] },
@@ -182,6 +292,7 @@ const Manuales = () => (
               { q: "¿Qué es TAMV?", a: "Tecnología Avanzada Mexicana Versátil: un ecosistema civilizatorio digital que integra identidad, educación, metaverso, economía y seguridad bajo principios éticos." },
               { q: "¿Quién puede contribuir?", a: "Cualquier persona con identidad verificada puede proponer cambios siguiendo el proceso de contribución descrito en Gobernanza." },
               { q: "¿Es TAMV open source?", a: "El core del ecosistema es open source bajo licencia MIT. Módulos de seguridad críticos tienen licencia propietaria." },
+              { q: "¿Qué nivel de membresía necesito?", a: "Free para explorar, Premium para dashboards, Devs para APIs/sandbox, Advance para nodos propios, Enterprise para despliegues federados completos." },
               { q: "¿Cómo me comunico con el equipo?", a: "A través de Isabella AI en esta wiki, GitHub Discussions en github.com/OsoPanda1, o el blog oficial en tamvonlinenetwork.blogspot.com." },
               { q: "¿Qué pasa si falla un nodo?", a: "El sistema de redundancia redistribuye carga automáticamente. El failover es < 200ms para pipelines calientes." },
               { q: "¿Cómo se protegen mis datos?", a: "Cifrado end-to-end, Zero-Trust, ZK-Proofs para verificación sin exposición, y control total del usuario sobre su identidad vía ID-NVIDA." },
