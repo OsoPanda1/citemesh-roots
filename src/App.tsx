@@ -25,6 +25,15 @@ import CasosDeUso from "./pages/CasosDeUso";
 import KitAPIs from "./pages/KitAPIs";
 import Estrategia from "./pages/Estrategia";
 import WikiTAMV from "./pages/WikiTAMV";
+import RedSocial from "./pages/RedSocial";
+import SeguridadTenochtitlan from "./pages/SeguridadTenochtitlan";
+import BlockchainMSR from "./pages/BlockchainMSR";
+import XRTecnologia from "./pages/XRTecnologia";
+import EconomiaFederada from "./pages/EconomiaFederada";
+import QuantumComputing from "./pages/QuantumComputing";
+import EnciclopediaUniversal from "./pages/EnciclopediaUniversal";
+import IsabellaAI from "./pages/IsabellaAI";
+import ImpactoCivilizatorio from "./pages/ImpactoCivilizatorio";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -60,6 +69,15 @@ const App = () => {
                 <Route path="/kit-apis" element={<KitAPIs />} />
                 <Route path="/estrategia" element={<Estrategia />} />
                 <Route path="/wikitamv" element={<WikiTAMV />} />
+                <Route path="/red-social" element={<RedSocial />} />
+                <Route path="/seguridad-tenochtitlan" element={<SeguridadTenochtitlan />} />
+                <Route path="/blockchain-msr" element={<BlockchainMSR />} />
+                <Route path="/xr-tecnologia" element={<XRTecnologia />} />
+                <Route path="/economia-federada" element={<EconomiaFederada />} />
+                <Route path="/quantum-computing" element={<QuantumComputing />} />
+                <Route path="/enciclopedia" element={<EnciclopediaUniversal />} />
+                <Route path="/isabella-ai" element={<IsabellaAI />} />
+                <Route path="/impacto-civilizatorio" element={<ImpactoCivilizatorio />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </WikiLayout>
