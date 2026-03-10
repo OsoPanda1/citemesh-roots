@@ -37,13 +37,14 @@ interface SectionProps {
   title: string;
   children: ReactNode;
   id?: string;
+  icon?: LucideIcon;
 }
 
-export function Section({ title, children, id }: SectionProps) {
+export function Section({ title, children, id, icon: Icon }: SectionProps) {
   return (
     <section id={id} className="space-y-4">
       <h2 className="text-xl font-semibold text-foreground flex items-center gap-2">
-        <span className="w-1 h-5 rounded-full bg-primary inline-block" />
+        {Icon ? <Icon className="h-5 w-5 text-primary" /> : <span className="w-1 h-5 rounded-full bg-primary inline-block" />}
         {title}
       </h2>
       {children}

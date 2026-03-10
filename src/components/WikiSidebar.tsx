@@ -2,6 +2,7 @@ import {
   BookOpen, Landmark, Layers, Shield, Brain, Clock, FileText,
   Home, Network, GraduationCap, Globe, Coins, ChevronDown,
   Activity, Cpu, BookMarked, Rocket, Crown, Briefcase, Plug, Target, Library,
+  Users, Link2, Monitor, Atom, Search, Heart, Award,
 } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { useLocation } from "react-router-dom";
@@ -38,6 +39,18 @@ const dominios = [
   { title: "Seguridad", url: "/dominios/seguridad", icon: Shield },
 ];
 
+const ecosistema = [
+  { title: "Red Social Avanzada", url: "/red-social", icon: Users },
+  { title: "Seguridad TENOCHTITLAN", url: "/seguridad-tenochtitlan", icon: Shield },
+  { title: "Blockchain MSR", url: "/blockchain-msr", icon: Link2 },
+  { title: "XR/VR/3D/4D", url: "/xr-tecnologia", icon: Monitor },
+  { title: "Economía Federada", url: "/economia-federada", icon: Coins },
+  { title: "Quantum Computing", url: "/quantum-computing", icon: Atom },
+  { title: "Enciclopedia Universal", url: "/enciclopedia", icon: Search },
+  { title: "Isabella AI", url: "/isabella-ai", icon: Heart },
+  { title: "Impacto & Expansión", url: "/impacto-civilizatorio", icon: Award },
+];
+
 const extras = [
   { title: "IA & Agentes", url: "/ia-agentes", icon: Brain },
   { title: "Sistemas Avanzados", url: "/sistemas-avanzados", icon: Cpu },
@@ -57,7 +70,6 @@ export function WikiSidebar() {
   const { state } = useSidebar();
   const collapsed = state === "collapsed";
   const location = useLocation();
-  const isActive = (path: string) => location.pathname === path;
 
   const renderItems = (items: typeof mainNav) => (
     <SidebarMenu>
@@ -101,6 +113,22 @@ export function WikiSidebar() {
             </CollapsibleTrigger>
             <CollapsibleContent>
               <SidebarGroupContent>{renderItems(dominios)}</SidebarGroupContent>
+            </CollapsibleContent>
+          </Collapsible>
+        </SidebarGroup>
+
+        <SidebarGroup>
+          <Collapsible defaultOpen>
+            <CollapsibleTrigger className="w-full">
+              <SidebarGroupLabel className="text-primary/70 uppercase text-xs tracking-widest flex items-center justify-between cursor-pointer">
+                <span className="flex items-center gap-1">
+                  <Globe className="h-3 w-3" /> Ecosistema NextGen
+                </span>
+                {!collapsed && <ChevronDown className="h-3 w-3" />}
+              </SidebarGroupLabel>
+            </CollapsibleTrigger>
+            <CollapsibleContent>
+              <SidebarGroupContent>{renderItems(ecosistema)}</SidebarGroupContent>
             </CollapsibleContent>
           </Collapsible>
         </SidebarGroup>

@@ -28,10 +28,20 @@ const searchIndex = [
   { title: "Sistemas Avanzados", url: "/sistemas-avanzados", keywords: "hexagonal pipeline eoct quantum filtración caliente frío social core comunidad reputación votación" },
   { title: "Manuales de Usuario", url: "/manuales", keywords: "guía manual inicio rápido faq redundancia desarrollo seguridad membresía instituciones piloto" },
   { title: "Despliegue Universal", url: "/despliegue", keywords: "deploy cloud on-premise federada certificación docker terraform prerequisitos checklist local kubernetes nodo observador colaborador operador guardián" },
-  { title: "Biografía CEO", url: "/biografia-ceo", keywords: "edwin anubis villaseñor fundador ceo castillo trejo" },
+  { title: "Biografía CEO", url: "/biografia-ceo", keywords: "edwin anubis villaseñor fundador ceo castillo trejo real del monte" },
   { title: "Casos de Uso", url: "/casos-de-uso", keywords: "universidad gobierno empresa comunidad fintech ejemplos implementación" },
   { title: "Kit de APIs", url: "/kit-apis", keywords: "api rest endpoints sdk integración conectores external rate limit acceso membresía sandbox" },
   { title: "Estrategia Comercial", url: "/estrategia", keywords: "marketing venta posicionamiento segmentos negocio plantilla replicable rutas adopción membresía free premium devs advance enterprise" },
+  // NextGen Ecosystem pages
+  { title: "Red Social Avanzada", url: "/red-social", keywords: "red social videos 4k 8k reels chats cifrado cgifts regalos dream spaces referidos tiktok instagram muro global publicidad ética" },
+  { title: "Seguridad TENOCHTITLAN", url: "/seguridad-tenochtitlan", keywords: "tenochtitlan anubis centinel horus dekateotl aztek gods quetzalcoatl ojo de ra mos gemelos guardianía seguridad capas encriptación" },
+  { title: "Blockchain MSR", url: "/blockchain-msr", keywords: "blockchain merkle state root antifraude ethereum polygon solana smart contract inmutable trazabilidad" },
+  { title: "Tecnología XR/VR/3D/4D", url: "/xr-tecnologia", keywords: "xr vr ar 3d 4d render ray tracing three.js unity unreal webxr openxr haptic motor hiperrealista" },
+  { title: "Economía Federada", url: "/economia-federada", keywords: "economia federada 30 monetización fairsplit creadores banco digital trading remesas nft marketplace" },
+  { title: "Quantum Computing", url: "/quantum-computing", keywords: "quantum cuántico qiskit cirq q# híbrido post-cuántico kyber dilithium qaoa vqe" },
+  { title: "Enciclopedia Universal", url: "/enciclopedia", keywords: "enciclopedia github sourcegraph wikipedia neowiki kiro conocimiento grafo búsqueda semántica" },
+  { title: "Isabella AI Universal", url: "/isabella-ai", keywords: "isabella ai ética xai explicable supervisión humana aprendizaje continuo tutoría moderación" },
+  { title: "Impacto Civilizatorio", url: "/impacto-civilizatorio", keywords: "impacto civilizatorio expansión global 25 países premios hitos licencia creative commons apache" },
 ];
 
 export function WikiSearch() {
