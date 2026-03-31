@@ -2,7 +2,7 @@ import {
   BookOpen, Landmark, Layers, Shield, Brain, Clock, FileText,
   Home, Network, GraduationCap, Globe, Coins, ChevronDown,
   Activity, Cpu, BookMarked, Rocket, Crown, Briefcase, Plug, Target, Library,
-  Users, Link2, Monitor, Atom, Search, Heart, Award,
+  Users, Link2, Monitor, Atom, Search, Heart, Award, MapPin,
 } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { useLocation } from "react-router-dom";
