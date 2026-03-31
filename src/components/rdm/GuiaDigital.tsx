@@ -86,7 +86,9 @@ export function GuiaDigital() {
               assistantContent += content;
               updateAssistant(assistantContent);
             }
-          } catch {}
+          } catch {
+            // Ignore malformed SSE chunks and continue streaming valid tokens.
+          }
         }
       }
     } catch (error) {
