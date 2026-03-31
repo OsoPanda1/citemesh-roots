@@ -239,7 +239,7 @@ const RealDelMonteDigital = () => {
 
         {/* EVENTOS TAB */}
         <TabsContent value="eventos" className="space-y-6">
-          <Section title="📅 Calendario de Eventos y Festivales" icon={<Calendar className="h-5 w-5" />}>
+          <Section title="📅 Calendario de Eventos y Festivales" icon={Calendar}>
             <div className="flex flex-wrap gap-2 mb-4">
               {EVENT_CATEGORIES.map(cat => (
                 <button
