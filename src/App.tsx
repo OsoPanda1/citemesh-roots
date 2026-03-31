@@ -79,6 +79,7 @@ const App = () => {
                 <Route path="/enciclopedia" element={<EnciclopediaUniversal />} />
                 <Route path="/isabella-ai" element={<IsabellaAI />} />
                 <Route path="/impacto-civilizatorio" element={<ImpactoCivilizatorio />} />
+                <Route path="/real-del-monte" element={<RealDelMonteDigital />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </WikiLayout>

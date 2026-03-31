@@ -49,6 +49,7 @@ const ecosistema = [
   { title: "Enciclopedia Universal", url: "/enciclopedia", icon: Search },
   { title: "Isabella AI", url: "/isabella-ai", icon: Heart },
   { title: "Impacto & Expansión", url: "/impacto-civilizatorio", icon: Award },
+  { title: "Real del Monte Digital", url: "/real-del-monte", icon: MapPin },
 ];
 
 const extras = [
