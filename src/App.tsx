@@ -34,6 +34,7 @@ import QuantumComputing from "./pages/QuantumComputing";
 import EnciclopediaUniversal from "./pages/EnciclopediaUniversal";
 import IsabellaAI from "./pages/IsabellaAI";
 import ImpactoCivilizatorio from "./pages/ImpactoCivilizatorio";
+import RealDelMonteDigital from "./pages/RealDelMonteDigital";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
