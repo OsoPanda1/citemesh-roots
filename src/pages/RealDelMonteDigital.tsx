@@ -207,7 +207,7 @@ const RealDelMonteDigital = () => {
 
         {/* TURISMO TAB */}
         <TabsContent value="turismo" className="space-y-6">
-          <Section title="🏔️ Descubre Real del Monte" icon={<MapPin className="h-5 w-5" />}>
+          <Section title="🏔️ Descubre Real del Monte" icon={MapPin}>
             <p className="text-muted-foreground leading-relaxed mb-4">
               Real del Monte (Mineral del Monte), Pueblo Mágico a <strong className="text-foreground">2,700 metros de altitud</strong> en la Sierra de Pachuca, Hidalgo. Un lugar donde la historia minera anglo-mexicana, la niebla perpetua y la gastronomía del paste se entrelazan con tecnología soberana.
             </p>
