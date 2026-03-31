@@ -2,7 +2,7 @@ import {
   BookOpen, Landmark, Layers, Shield, Brain, Clock, FileText,
   Home, Network, GraduationCap, Globe, Coins, ChevronDown,
   Activity, Cpu, BookMarked, Rocket, Crown, Briefcase, Plug, Target, Library,
-  Users, Link2, Monitor, Atom, Search, Heart, Award,
+  Users, Link2, Monitor, Atom, Search, Heart, Award, MapPin,
 } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { useLocation } from "react-router-dom";
@@ -49,6 +49,7 @@ const ecosistema = [
   { title: "Enciclopedia Universal", url: "/enciclopedia", icon: Search },
   { title: "Isabella AI", url: "/isabella-ai", icon: Heart },
   { title: "Impacto & Expansión", url: "/impacto-civilizatorio", icon: Award },
+  { title: "Real del Monte Digital", url: "/real-del-monte", icon: MapPin },
 ];
 
 const extras = [

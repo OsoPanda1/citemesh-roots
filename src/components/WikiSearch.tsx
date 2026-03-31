@@ -42,6 +42,7 @@ const searchIndex = [
   { title: "Enciclopedia Universal", url: "/enciclopedia", keywords: "enciclopedia github sourcegraph wikipedia neowiki kiro conocimiento grafo búsqueda semántica" },
   { title: "Isabella AI Universal", url: "/isabella-ai", keywords: "isabella ai ética xai explicable supervisión humana aprendizaje continuo tutoría moderación" },
   { title: "Impacto Civilizatorio", url: "/impacto-civilizatorio", keywords: "impacto civilizatorio expansión global 25 países premios hitos licencia creative commons apache" },
+  { title: "Real del Monte Digital", url: "/real-del-monte", keywords: "real del monte rdm tos territorial operating system node zero pueblo mágico hidalgo pastes minas panteón inglés turismo eventos isabella kernel gemelo digital soberanía" },
 ];
 
 export function WikiSearch() {
