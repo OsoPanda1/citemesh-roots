@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { MapPin, Landmark, Utensils, BookOpen, Store, Route, MessageSquare, Eye, ChevronRight, Calendar, Sparkles } from "lucide-react";
+import { ArrowRight, Calendar, Clapperboard, Landmark, MessageSquare, Mic2, Route, Sparkles, Store, Theater, Utensils } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -8,50 +8,51 @@ import { POSTS_MURO } from "@/data/rdm-mock-data";
 import { EVENTOS_RDM } from "@/data/rdm-events";
 import heroImg from "@/assets/rdm-hero-home.jpg";
 
-const QUICK_BLOCKS = [
-  { title: "Cultura e Historia", desc: "Conoce el origen minero, la influencia inglesa y las tradiciones que han dado identidad a Real del Monte a lo largo de los siglos.", href: "/cultura", icon: Landmark, color: "text-amber-400" },
-  { title: "Gastronomía", desc: "Descubre los sabores del Real: pastes, barbacoa, dulces y bebidas que cuentan historias en cada bocado.", href: "/gastronomia", icon: Utensils, color: "text-orange-400" },
-  { title: "Dichos Mineros", desc: "Aprende el lenguaje minero y los dichos que han pasado de generación en generación bajo la tierra y en las calles.", href: "/dichos-mineros", icon: BookOpen, color: "text-emerald-400" },
-  { title: "Catálogo de Comercios", desc: "Encuentra restaurantes, cafés, hospedaje, artesanías y servicios locales confiables, todo en un mismo lugar.", href: "/comercios", icon: Store, color: "text-blue-400" },
-  { title: "Rutas Turísticas", desc: "Recorre el Real con rutas diseñadas para aprovechar tu tiempo: históricas, gastronómicas, naturales y mixtas.", href: "/rutas", icon: Route, color: "text-purple-400" },
-  { title: "Muro de Publicaciones", desc: "Entra al pulso digital del pueblo: experiencias, fotos, anuncios y promociones de la comunidad.", href: "/muro", icon: MessageSquare, color: "text-pink-400" },
+const MAIN_EXPERIENCES = [
+  { title: "Gastronomía", desc: "Pastes, cacao de metate, pulque y cocina de montaña en una curaduría premium.", href: "/gastronomia", icon: Utensils },
+  { title: "Arte y Cultura", desc: "Festivales, galerías, rituales y talento local con mirada internacional.", href: "/cultura/2", icon: Theater },
+  { title: "Historia Viva", desc: "Línea del tiempo minera, patrimonio cornish y memoria oral del pueblo.", href: "/cultura/0", icon: Landmark },
+  { title: "Archivo RDM", desc: "Tradición local, relatos y el habla popular preservada en formato digital.", href: "/dichos-mineros", icon: Mic2 },
+  { title: "Rutas Sofisticadas", desc: "Itinerarios con ritmo cinematográfico para viajeros exigentes.", href: "/rutas", icon: Route },
+  { title: "Comercios Selectos", desc: "Hoteles, cafés, experiencias y compras con identidad local.", href: "/comercios", icon: Store },
 ];
 
-const EXPLORE_SECTIONS = [
-  { title: "Primera vez en Real del Monte", desc: "Los imprescindibles para tu primera visita", href: "/que-visitar", emoji: "🏔️" },
-  { title: "Experiencias mineras y patrimonio", desc: "Desciende a las minas y conoce siglos de historia", href: "/cultura", emoji: "⛏️" },
-  { title: "Sabores del Real", desc: "Rutas gastronómicas para cada paladar", href: "/gastronomia", emoji: "🍽️" },
+const PAGINACION_CAPITULOS = [
+  { label: "Página 01", title: "Gastronomía", href: "/gastronomia" },
+  { label: "Página 02", title: "Arte", href: "/cultura/2" },
+  { label: "Página 03", title: "Cultura", href: "/cultura/1" },
+  { label: "Página 04", title: "Historia", href: "/cultura/0" },
+  { label: "Página 05", title: "Archivo RDM", href: "/dichos-mineros" },
 ];
 
 export default function RDMHome() {
-  const todayEvents = EVENTOS_RDM.filter(e => e.destacado).slice(0, 4);
+  const todayEvents = EVENTOS_RDM.filter((e) => e.destacado).slice(0, 4);
   const recentPosts = POSTS_MURO.slice(0, 3);
 
   return (
     <div>
-      {/* ─── HERO ─── */}
-      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
-        <img src={heroImg} alt="Real del Monte, Pueblo Mágico" className="absolute inset-0 w-full h-full object-cover" width={1920} height={800} />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/30" />
-        <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
-            <Badge className="mb-4 bg-primary/20 text-primary border-primary/30">Pueblo Mágico · Hidalgo, México</Badge>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 leading-tight">
-              Real del Monte Digital
+      <section className="relative min-h-[82vh] flex items-center justify-center overflow-hidden">
+        <img src={heroImg} alt="Real del Monte, Pueblo Mágico" className="absolute inset-0 w-full h-full object-cover scale-105" width={1920} height={900} />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(251,191,36,0.24),transparent_45%)]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/75 to-black/45" />
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+            <Badge className="mb-5 bg-amber-500/20 text-amber-300 border-amber-400/40">
+              <Clapperboard className="h-3.5 w-3.5 mr-1.5" /> Presentación Cinematográfica AAA
+            </Badge>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-4 leading-tight">
+              Real del Monte
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-orange-300 to-yellow-100">Elegante, Vivo y Global</span>
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-2">Pueblo Mágico vivo 24/7</p>
-            <p className="text-sm md:text-base text-muted-foreground/80 mb-8 max-w-xl mx-auto">
-              Explora su historia, sabores, rutas, comercios y comunidad en un solo espacio interactivo, pensado para habitantes, visitantes y amantes del Real.
+            <p className="text-lg md:text-xl text-zinc-200 mb-8 max-w-2xl mx-auto">
+              Una experiencia turística sofisticada, amigable y profundamente local: gastronomía, arte, cultura, historia y tradición minera en un solo escenario digital.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
-              <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
-                <Link to="/rutas"><Route className="h-4 w-4 mr-2" /> Explorar rutas turísticas</Link>
+              <Button asChild size="lg" className="bg-amber-500 text-black hover:bg-amber-400">
+                <Link to="/que-visitar">Iniciar experiencia</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-primary/40 text-primary hover:bg-primary/10">
-                <Link to="/que-visitar"><Eye className="h-4 w-4 mr-2" /> Qué visitar en el Real</Link>
-              </Button>
-              <Button asChild size="lg" variant="ghost" className="text-muted-foreground hover:text-foreground">
-                <Link to="/mapa"><MapPin className="h-4 w-4 mr-2" /> Ver mapa interactivo</Link>
+              <Button asChild size="lg" variant="outline" className="border-white/50 bg-black/20 text-white hover:bg-black/35">
+                <Link to="/dichos-mineros">Archivo RDM · Dichos</Link>
               </Button>
             </div>
           </motion.div>
@@ -59,24 +60,21 @@ export default function RDMHome() {
       </section>
 
       <div className="max-w-7xl mx-auto px-4">
-        {/* ─── QUICK BLOCKS ─── */}
-        <section className="py-16">
+        <section className="py-14">
+          <div className="flex items-center gap-3 mb-6">
+            <Sparkles className="h-5 w-5 text-amber-500" />
+            <h2 className="text-2xl font-bold text-foreground">Experiencias Premium</h2>
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {QUICK_BLOCKS.map((b, i) => (
-              <motion.div key={b.href} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.08 }}>
-                <Link to={b.href}>
-                  <Card className="group h-full bg-card/60 border-border/40 hover:border-primary/40 hover:bg-card/80 transition-all duration-300">
+            {MAIN_EXPERIENCES.map((item, i) => (
+              <motion.div key={item.href} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.06 }}>
+                <Link to={item.href}>
+                  <Card className="group h-full bg-card/65 border-border/40 hover:border-amber-500/50 hover:shadow-2xl hover:shadow-amber-900/20 transition-all">
                     <CardContent className="p-5">
-                      <div className="flex items-start gap-3">
-                        <b.icon className={`h-6 w-6 mt-0.5 ${b.color} shrink-0`} />
-                        <div>
-                          <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">{b.title}</h3>
-                          <p className="text-sm text-muted-foreground mt-1">{b.desc}</p>
-                          <span className="text-xs text-primary mt-2 inline-flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                            Ver más <ChevronRight className="h-3 w-3" />
-                          </span>
-                        </div>
-                      </div>
+                      <item.icon className="h-6 w-6 text-amber-500 mb-3" />
+                      <h3 className="font-semibold text-foreground group-hover:text-amber-500 transition-colors">{item.title}</h3>
+                      <p className="text-sm text-muted-foreground mt-1">{item.desc}</p>
+                      <span className="text-xs mt-3 inline-flex items-center gap-1 text-amber-500">Entrar <ArrowRight className="h-3 w-3" /></span>
                     </CardContent>
                   </Card>
                 </Link>
@@ -85,41 +83,15 @@ export default function RDMHome() {
           </div>
         </section>
 
-        {/* ─── HOY EN EL REAL ─── */}
-        <section className="py-12">
-          <div className="flex items-center gap-3 mb-6">
-            <Calendar className="h-5 w-5 text-primary" />
-            <h2 className="text-2xl font-bold text-foreground">Hoy en el Real</h2>
-          </div>
-          <p className="text-muted-foreground mb-6">Eventos, promociones y momentos que están ocurriendo ahora mismo en Real del Monte.</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {todayEvents.map(e => (
-              <Card key={e.id} className="bg-card/60 border-border/40">
-                <CardContent className="p-4">
-                  <Badge variant="outline" className="mb-2 text-xs">{e.category}</Badge>
-                  <h4 className="font-semibold text-foreground text-sm">{e.name}</h4>
-                  <p className="text-xs text-muted-foreground mt-1">{e.date} · {e.time}</p>
-                  <p className="text-xs text-muted-foreground mt-2 line-clamp-2">{e.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
-
-        {/* ─── EXPLORA POR INTERÉS ─── */}
-        <section className="py-12">
-          <div className="flex items-center gap-3 mb-6">
-            <Sparkles className="h-5 w-5 text-primary" />
-            <h2 className="text-2xl font-bold text-foreground">Explora por interés</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {EXPLORE_SECTIONS.map(s => (
-              <Link key={s.href} to={s.href}>
-                <Card className="group bg-card/60 border-border/40 hover:border-primary/40 transition-all">
-                  <CardContent className="p-5 text-center">
-                    <span className="text-3xl mb-3 block">{s.emoji}</span>
-                    <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">{s.title}</h3>
-                    <p className="text-sm text-muted-foreground mt-1">{s.desc}</p>
+        <section className="py-10">
+          <h2 className="text-2xl font-bold text-foreground mb-5">Paginación editorial de turismo global</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-3">
+            {PAGINACION_CAPITULOS.map((cap) => (
+              <Link key={cap.href} to={cap.href}>
+                <Card className="h-full border-border/40 bg-muted/25 hover:bg-muted/40 transition-colors">
+                  <CardContent className="p-4">
+                    <p className="text-xs text-amber-500 font-medium">{cap.label}</p>
+                    <p className="font-semibold text-foreground mt-1">{cap.title}</p>
                   </CardContent>
                 </Card>
               </Link>
@@ -127,27 +99,38 @@ export default function RDMHome() {
           </div>
         </section>
 
-        {/* ─── RECENT POSTS ─── */}
+        <section className="py-10">
+          <div className="flex items-center gap-3 mb-6">
+            <Calendar className="h-5 w-5 text-primary" />
+            <h2 className="text-2xl font-bold text-foreground">Hoy en el Real</h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {todayEvents.map((e) => (
+              <Card key={e.id} className="bg-card/60 border-border/40">
+                <CardContent className="p-4">
+                  <Badge variant="outline" className="mb-2 text-xs">{e.category}</Badge>
+                  <h4 className="font-semibold text-foreground text-sm">{e.name}</h4>
+                  <p className="text-xs text-muted-foreground mt-1">{e.date} · {e.time}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+
         <section className="py-12">
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-3">
               <MessageSquare className="h-5 w-5 text-primary" />
-              <h2 className="text-2xl font-bold text-foreground">Del Muro</h2>
+              <h2 className="text-2xl font-bold text-foreground">Pulso de la comunidad</h2>
             </div>
-            <Link to="/muro" className="text-sm text-primary hover:underline flex items-center gap-1">Ver todo <ChevronRight className="h-3 w-3" /></Link>
+            <Link to="/muro" className="text-sm text-primary hover:underline">Ver todo</Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {recentPosts.map(p => (
+            {recentPosts.map((p) => (
               <Card key={p.id} className="bg-card/60 border-border/40">
                 <CardContent className="p-4">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-sm font-medium text-foreground">{p.autor}</span>
-                    <Badge variant="outline" className="text-[10px]">{p.rol}</Badge>
-                  </div>
-                  <p className="text-sm text-muted-foreground line-clamp-3">{p.texto}</p>
-                  <div className="flex gap-1.5 mt-2 flex-wrap">
-                    {p.etiquetas.map(t => <span key={t} className="text-[10px] text-primary/70">{t}</span>)}
-                  </div>
+                  <p className="text-sm font-medium text-foreground">{p.autor}</p>
+                  <p className="text-sm text-muted-foreground mt-2 line-clamp-3">{p.texto}</p>
                 </CardContent>
               </Card>
             ))}
