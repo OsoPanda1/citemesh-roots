@@ -285,7 +285,7 @@ const RealDelMonteDigital = () => {
 
         {/* GALERÍA TAB */}
         <TabsContent value="galeria" className="space-y-6">
-          <Section title="📸 Galería Fotográfica" icon={<Eye className="h-5 w-5" />}>
+          <Section title="📸 Galería Fotográfica" icon={Eye}>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
               {[
                 { src: aerialPueblo, alt: "Vista aérea de Real del Monte" },
