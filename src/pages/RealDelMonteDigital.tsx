@@ -98,8 +98,8 @@ const RealDelMonteDigital = () => {
           </p>
           <div className="text-xs text-muted-foreground font-mono space-y-0.5">
             <p>● isabella-kernel.service — <span className="text-foreground">Sovereign Intelligence Core</span></p>
-            <p>  Loaded: <span className="text-green-400">enabled</span></p>
-            <p>  Active: <span className="text-green-400">active (running)</span></p>
+            <p>  Loaded: <span className="text-primary">enabled</span></p>
+            <p>  Active: <span className="text-primary">active (running)</span></p>
             <p>  Status: <span className="text-primary">"DIGNITY PROTOCOL ENFORCED"</span></p>
             <p>  Mode: <span className="text-secondary">Predictive Governance</span></p>
           </div>
