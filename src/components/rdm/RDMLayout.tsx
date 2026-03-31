@@ -13,6 +13,7 @@ const NAV_ITEMS = [
   { label: "Comercios", href: "/comercios", icon: Store },
   { label: "Muro", href: "/muro", icon: MessageSquare },
   { label: "Mapa", href: "/mapa", icon: Eye },
+  { label: "RDM-TOS", href: "/rdm-tos", icon: Route },
 ];
 
 const FOOTER_LINKS = [
@@ -24,6 +25,7 @@ const FOOTER_LINKS = [
   { label: "Qué Visitar", href: "/que-visitar" },
   { label: "Muro", href: "/muro" },
   { label: "Mapa", href: "/mapa" },
+  { label: "RDM-TOS", href: "/rdm-tos" },
 ];
 
 interface RDMLayoutProps {

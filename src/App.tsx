@@ -22,6 +22,7 @@ import RDMRutaDetalle from "./pages/rdm/RDMRutaDetalle";
 import RDMQueVisitar from "./pages/rdm/RDMQueVisitar";
 import RDMMuro from "./pages/rdm/RDMMuro";
 import RDMMapa from "./pages/rdm/RDMMapa";
+import RDMTOS from "./pages/rdm/RDMTOS";
 
 // Wiki Pages
 import Index from "./pages/Index";
@@ -81,6 +82,7 @@ const App = () => {
               <Route element={<RDMLayout><RDMQueVisitar /></RDMLayout>} path="/que-visitar" />
               <Route element={<RDMLayout><RDMMuro /></RDMLayout>} path="/muro" />
               <Route element={<RDMLayout><RDMMapa /></RDMLayout>} path="/mapa" />
+              <Route element={<RDMLayout><RDMTOS /></RDMLayout>} path="/rdm-tos" />
 
               {/* ─── Wiki TAMV ─── */}
               <Route path="/wiki" element={<WikiLayout><Index /></WikiLayout>} />
