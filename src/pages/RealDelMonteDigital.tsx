@@ -91,7 +91,7 @@ const RealDelMonteDigital = () => {
       </div>
 
       {/* System Manifest */}
-      <Section title="🧠 System Manifest" icon={<Server className="h-5 w-5" />}>
+      <Section title="🧠 System Manifest" icon={Server}>
         <div className="rounded-lg border border-primary/30 bg-primary/5 p-4 mb-4">
           <p className="text-sm text-muted-foreground font-mono mb-2">
             <span className="text-primary">$</span> systemctl status isabella-kernel
