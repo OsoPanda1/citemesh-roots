@@ -316,7 +316,7 @@ const RealDelMonteDigital = () => {
 
         {/* SABÍAS QUE TAB */}
         <TabsContent value="sabias" className="space-y-6">
-          <Section title="💡 ¿Sabías que…?" icon={<Info className="h-5 w-5" />}>
+          <Section title="💡 ¿Sabías que…?" icon={Info}>
             <div className="space-y-4">
               {SABIAS_QUE.map((item, i) => (
                 <div key={i} className="rounded-lg border border-border/50 bg-card/60 p-4">
